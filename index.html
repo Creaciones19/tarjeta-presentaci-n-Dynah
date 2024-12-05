@@ -64,6 +64,25 @@ h2 {
   margin: 20px 0; /* Espaciado arriba y abajo */
 }
 
+/* Redes Sociales */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.social-icons img {
+  width: 70px;
+  height: 70px;
+  transition: transform 0.3s, opacity 0.3s;
+  cursor: pointer;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
 
 /* Botón de Ubicación */
 .location-btn {
@@ -236,6 +255,79 @@ p {
         width: 90%;
       }
     }
+    /* Sección de Blog */
+ .blog-section {
+  padding: 40px 20px;
+  background-color: transparent; /* Mantiene el fondo del proyecto */
+  color: #000; /* Puedes ajustar el color del texto si es necesario */
+}
+
+.blog-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: white; /* Forzar color blanco para el encabezado */
+}
+
+.blog-item {
+  display: grid; /* Activa CSS Grid */
+  grid-template-columns: auto 1fr; /* Imagen a la izquierda y texto a la derecha */
+  align-items: center; /* Centra verticalmente los elementos */
+  gap: 20px; /* Espacio entre imagen y texto */
+  margin-bottom: 40px; /* Espacio inferior entre los bloques */
+}
+
+.blog-image img {
+  max-width: 100%; /* Ajusta la imagen al contenedor */
+  height: auto; /* Mantén las proporciones */
+  border-radius: 10px; /* Bordes redondeados opcionales */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+}
+
+.blog-text {
+  color: white; /* Cambia el color del texto según tu diseño */
+  font-family: Arial, sans-serif; /* Cambia la fuente si es necesario */
+  padding: 10px; /* Espaciado interno opcional */
+}
+
+.blog-text h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.blog-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Botn al final del blog */
+.blog-contact {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.blog-contact .contact-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFF;
+  background-color: #28a745;
+  border: 2px solid #28a745;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  animation: pulse 1.5s infinite;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.blog-contact .contact-btn:hover {
+  background-color: #FFF;
+  color: #28a745;
+  transform: scale(1.1);
+}
+
   </style>
 </head>
 <body>
@@ -244,14 +336,22 @@ p {
   <div class="logo-container">
     <img src="logo busva propitt.png" alt="Logo de Busva Home Broker">
   </div>
-  <h1>Busva Home Broker</h1>
-  <p> ¡Bienvenidos a Busva Homebroker! </p> 
-  <p> ¿Quiénes somos? </p> 
-  </p>  Somos líderes en la venta de propiedades de remate bancario,con más de una década de experiencia en el mercado. </p>  
-</p> Nos especializamos en ofrecer soluciones inmobiliarias de alta calidad, priorizando la transparencia, seguridad y accesibilidad.</p>  
-</p> Nuestra misión es facilitar la compra de propiedades a precios competitivos, garantizando una experiencia de compra sencilla y confiable. </p>
+  <h1> !Bienvenidos a Busva Homebroker!</h1>
+  <h2>¿Quiénes somos?</h2>
+  <p>Somos líderes en la venta de propiedades de remate bancario, con más de una década de experiencia en el mercado.</p>  
+  <p>Nos especializamos en ofrecer soluciones inmobiliarias de alta calidad, priorizando la transparencia, seguridad y accesibilidad.</p>  
+  <p>Nuestra misión es facilitar la compra de propiedades a precios competitivos, garantizando una experiencia de compra sencilla y confiable.</p>
 </div>
- 
+<!-- Sección de "iconnos redes sociales" --> 
+<div class="section">
+  <h2>Conéctate con nosotros</h2>
+  <!-- Íconos de redes sociales debajo del título y la descripción -->
+  <div class="social-icons">
+    <a href="https://www.facebook.com/"><img src="facebook (4).png" alt="Facebook"></a>
+    <a href="https://www.tiktok.com/@dynahg19?_t=8rZ7peaCGr2&_r=1"><img src="tik-tok (3).png" alt="tik-tok"></a>
+    <a href="http://wa.me/523343340062"><img src="whatsapp (1).png" alt="WhatsApp"></a>
+  </div>
+</div>
 <!-- Sección de "¿Por qué elegirnos?" -->
 <div class="porque elegirnos">
   <h2>¿Por qué elegirnos?</h2>
@@ -320,18 +420,71 @@ p {
   
   <p>¿No encuentras la propiedad de tu interés? ¡No te preocupes! Tenemos muchas más opciones exclusivas esperando por ti. Contáctanos y descubre la casa perfecta para vivir o invertir</p>
 
-  <!-- Contact Button Section -->
-<div class="section">
-  <button class="contact-btn" onclick="window.open('https://api.whatsapp.com/send?phone=5213342055146&text=Bienvenido%20a%20Busva%20Homebroker.%20¿Cómo%20puedo%20ayudarle%3F')">
+ <!-- Contact Button Section -->
+ <div class="section">
+  <button class="contact-btn" onclick="window.open('https://wa.me/523343340062', '_blank')">
     ¡Contáctame Ahora!
   </button>
 </div>
+<!-- Sección de Blog -->
+<div class="blog-section">
+  <h2>Blog</h2>
 
+  <!-- Primer bloque -->
+  <div class="blog-item">
+    <div class="blog-text">
+      <h3>Desalojos exitosos</h3>
+      <p>Te mostramos cómo aseguramos cada propiedad. Descubre casos de éxito en remates bancarios y cómo protegemos a nuestros clientes durante el proceso.</p>
+    </div>
+    <div class="blog-image">
+      <img src="desalojo.png" alt="Desalojo exitoso">
+    </div>
+  </div>
 
+  <!-- Segundo bloque -->
+  <div class="blog-item ">
+    <div class="blog-text">
+      <h3>Firma en juzgados</h3>
+      <p>Conoce el proceso de firma en juzgados para garantizar la seguridad de cada transacción. Nuestra experiencia nos respalda.</p>
+    </div>
+    <div class="blog-image">
+      <img src="firmas.png" alt="Firma en juzgado">
+    </div>
+  </div>
+
+  <!-- Tercer bloque -->
+  <div class="blog-item">
+    <div class="blog-text">
+      <h3>Conoce mas sobre el proceso de Remates Bancarios</h3>
+      <p>Informacion que compartio el  Periodico el Financiero sobre propiedades de Remate Bancario</p>
+    </div>
+    <div class="blog-image">
+      <img src="aconsejos.png" alt="Recomendaciones">
+    </div>
+  </div>
+
+  <!-- Cuarto bloque -->
+  <div class="blog-item ">
+    <div class="blog-text">
+      <h3>Experiencias de clientes</h3>
+      <p>Lee testimonios reales de clientes satisfechos que encontraron su hogar o inversión perfecta con nosotros.</p>
+    </div>
+    <div class="blog-image">
+      <img src="recomendaciones.png" alt="Experiencias de clientes">
+    </div>
+  </div>
+
+  <!-- Botón de contacto al final -->
+   <!-- Contact Button Section -->
+   <div class="section">
+    <button class="contact-btn" onclick="window.open('https://wa.me/523343340062', '_blank')">
+      ¡Contáctame Ahora!
+    </button>
+  </div>
    <!-- Pie de página -->
   <footer>
-    <P>ALEJANDRA GOMEZ</P>
-   <p>Directora Busva Homebroker Jalisco</p> 
+    <P>DYNAH GOMEZ</P>
+   <p>Gerente Jalisco</p> 
   </footer>
 </body>
 </html>
