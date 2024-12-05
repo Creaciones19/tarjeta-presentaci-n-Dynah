@@ -271,24 +271,29 @@ p {
 }
 
 .blog-item {
-  display: grid; /* Activa CSS Grid */
-  grid-template-columns: auto 1fr; /* Imagen a la izquierda y texto a la derecha */
-  align-items: center; /* Centra verticalmente los elementos */
-  gap: 20px; /* Espacio entre imagen y texto */
-  margin-bottom: 40px; /* Espacio inferior entre los bloques */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  justify-content: space-between;
+}
+
+.blog-image {
+  flex: 1;
+  padding-right: 20px;
 }
 
 .blog-image img {
-  max-width: 100%; /* Ajusta la imagen al contenedor */
-  height: auto; /* Mantén las proporciones */
-  border-radius: 10px; /* Bordes redondeados opcionales */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .blog-text {
-  color: white; /* Cambia el color del texto según tu diseño */
-  font-family: Arial, sans-serif; /* Cambia la fuente si es necesario */
-  padding: 10px; /* Espaciado interno opcional */
+  flex: 2;
+  color: white;
+  font-family: Arial, sans-serif;
 }
 
 .blog-text h3 {
@@ -300,6 +305,112 @@ p {
   font-size: 18px;
   line-height: 1.6;
 }
+.blog-section {
+  padding: 40px 20px;
+  background-color: transparent;
+  color: #000;
+}
+
+.blog-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: white;
+}
+
+.blog-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  justify-content: space-between;
+  gap: 20px; /* Agregar espacio entre imagen y texto */
+}
+
+.blog-image {
+  flex: 1;
+}
+
+.blog-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px; /* Añadir margen superior para separar de encabezado */
+}
+
+.blog-text {
+  flex: 2;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.blog-text h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  margin-top: 20px; /* Separar el texto del encabezado */
+}
+
+.blog-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.blog-contact {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.blog-contact .contact-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFF;
+  background-color: #28a745;
+  border: 2px solid #28a745;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  animation: pulse 1.5s infinite;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.blog-contact .contact-btn:hover {
+  background-color: #FFF;
+  color: #28a745;
+  transform: scale(1.1);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px #28a745;
+  }
+  50% {
+    box-shadow: 0 0 20px #28a745;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-item {
+    flex-direction: column; /* Ajusta a una columna para pantallas pequeñas */
+  }
+
+  .blog-text {
+    font-size: 16px; /* Ajuste de tamaño de fuente en pantallas pequeñas */
+  }
+
+  .blog-image img {
+    width: 100%;
+    margin-top: 20px; /* Separar las imágenes de los encabezados también en móviles */
+  }
+
+ 
+}
+
 
 /* Botn al final del blog */
 .blog-contact {
@@ -327,7 +438,12 @@ p {
   color: #28a745;
   transform: scale(1.1);
 }
-
+footer {
+  color: white; /* Cambia el color del texto a blanco */
+  background-color: 
+  padding: 20px; /* Añadir algo de espacio alrededor del contenido */
+  text-align: center; /* Centra el contenido dentro del footer */
+}
   </style>
 </head>
 <body>
@@ -484,7 +600,7 @@ p {
    <!-- Pie de página -->
   <footer>
     <P>DYNAH GOMEZ</P>
-   <p>Gerente Jalisco</p> 
+   <p>Gerente Reginal de Busva HomeBrokers Jalisco</p> 
   </footer>
 </body>
 </html>
