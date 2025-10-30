@@ -1,0 +1,535 @@
+/* COLORES DEL BODY CORREGIDOS */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ede2d8 85%, #051d40 100%) !important;
+  background-size: cover !important;
+  color: #202122 !important;
+  font-weight: 900;
+  text-align: center;
+}
+
+/* HEADER CON VIDEO RESPONSIVE */
+.header-video {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.header-video .video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* FOOTER CON VIDEO RESPONSIVE */
+.footer-video {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.footer-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.footer-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 100%;
+  z-index: 2;
+}
+
+.footer-texto h1 {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  margin-bottom: 20px;
+}
+
+.footer-enlaces {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.footer-enlaces a {
+  text-decoration: none;
+}
+
+.footer-enlaces h2, .footer-enlaces h3 {
+  color: #FF1493;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  margin: 0;
+}
+
+/* Sección de encabezado */
+.header {
+  padding: 20px;
+  color: #202122;
+  font-weight: 900;
+  text-align: center;
+}
+
+/* Contenedor circular para el logotipo */
+.header .logo-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagen dentro del contenedor del logotipo */
+.header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilo de los títulos principales */
+h2 {
+  font-size: 36px;
+  margin: 20px 0;
+  color: #202122;
+}
+
+/* Redes Sociales */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.social-icons img {
+  width: 70px;
+  height: 70px;
+  transition: transform 0.3s, opacity 0.3s;
+  cursor: pointer;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+/* Botón de Ubicación */
+.location-btn {
+  display: inline-block;
+  padding: 15px 20px;
+  background-color: #007BFF;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.location-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Estilo general para párrafos */
+p {
+  margin: 20px auto;
+  max-width: 700px;
+  color: #202122;
+}
+
+/* Sección de propiedades destacadas */
+.property {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Imagen de la propiedad */
+.property img {
+  width: 80%;
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+/* Botones amarillos para enlaces */
+.btn-yellow {
+  display: inline-block;
+  margin: 20px 10px;
+  padding: 10px 20px;
+  background-color: #FFD700;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #FFD700;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-yellow:hover {
+  background-color: #000;
+  color: #FFD700;
+}
+
+/* Botón de contacto de WhatsApp */
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFF;
+  background-color: #25D366;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s, transform 0.2s;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn:hover {
+  background-color: #128C7E;
+  transform: scale(1.1);
+}
+
+/* Video Section */
+iframe {
+  width: 80%;
+  max-width: 600px;
+  height: 315px;
+  margin: 20px auto;
+  border: 3px solid #FFD700;
+  border-radius: 10px;
+}
+
+/* QR Section */
+.qr img {
+  width: 150px;
+  margin: 20px 0;
+}
+
+/* Services Section without bullets */
+.services-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.services-list li {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px #28a745;
+  }
+  50% {
+    box-shadow: 0 0 20px #28a745;
+  }
+}
+
+/* Sección de Blog */
+.blog-section {
+  padding: 40px 20px;
+  background-color: transparent;
+}
+
+.blog-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #202122;
+}
+
+.blog-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.blog-image {
+  flex: 1;
+}
+
+.blog-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.blog-text {
+  flex: 2;
+  color: #202122;
+  font-family: Arial, sans-serif;
+}
+
+.blog-text h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.blog-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.blog-contact {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.tiktok-logo {
+  filter: invert(1);
+  width: 40px;
+  height: 40px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .header-video {
+    height: 150px;
+  }
+  
+  .footer-video {
+    height: 200px;
+  }
+  
+  .footer-enlaces {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .footer-texto h1 {
+    font-size: 1.5rem;
+  }
+  
+  .footer-enlaces h2, .footer-enlaces h3 {
+    font-size: 1.2rem;
+  }
+  
+  .blog-item {
+    flex-direction: column;
+  }
+
+  iframe {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-video {
+    height: 120px;
+  }
+  
+  .footer-video {
+    height: 180px;
+  }
+  
+  .footer-texto h1 {
+    font-size: 1.2rem;
+  }
+  
+  .footer-enlaces h2, .footer-enlaces h3 {
+    font-size: 1rem;
+  }
+}
+/* FOOTER CON VIDEO RESPONSIVE */
+.footer-video {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.footer-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.footer-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 100%;
+  z-index: 2;
+}
+
+.footer-texto h1 {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  margin-bottom: 30px;
+  color: white;
+}
+
+.footer-enlaces {
+  display: flex;
+  justify-content: space-between; /* Distribuye el espacio entre los enlaces */
+  width: 80%; /* Ancho reducido para que no lleguen a los bordes */
+  margin: 0 auto;
+  position: relative;
+}
+
+/* AJUSTE DE POSICIÓN - CDMX más a la izquierda PERO SIN CORTARSE */
+.footer-enlaces a:first-child {
+  position: relative;
+  left: -20px; /* REDUCIDO: Menos desplazamiento hacia izquierda */
+}
+
+/* AJUSTE DE POSICIÓN - Jalisco más a la derecha PERO SIN CORTARSE */
+.footer-enlaces a:last-child {
+  position: relative;
+  right: -20px; /* REDUCIDO: Menos desplazamiento hacia derecha */
+}
+
+.footer-enlaces a {
+  text-decoration: none;
+  display: block; /* Asegura que sean elementos de bloque para mejor clic */
+  padding: 10px 15px; /* Área de clic más grande */
+  transition: transform 0.3s ease; /* Efecto al pasar el mouse */
+}
+
+/* Efecto hover para mejor experiencia de usuario */
+.footer-enlaces a:hover {
+  transform: scale(1.05); /* Ligero aumento al pasar el mouse */
+}
+
+.footer-enlaces h2, .footer-enlaces h3 {
+  color: #FF1493 !important;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 4px rgba(255,255,255,0.7);
+  margin: 0;
+  font-weight: bold;
+  white-space: nowrap; /* Evita que el texto se parta */
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* TABLETS y MÓVILES GRANDES (768px o menos) */
+@media (max-width: 768px) {
+  .footer-video {
+    height: 200px;
+  }
+  
+  .footer-enlaces {
+    flex-direction: row; /* MANTENER en fila para que estén lado a lado */
+    justify-content: space-around; /* Distribución más equilibrada */
+    width: 90%; /* Más ancho para móviles */
+    gap: 10px; /* Espacio entre enlaces */
+  }
+  
+  .footer-texto h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .footer-enlaces h2, .footer-enlaces h3 {
+    font-size: 1.1rem;
+  }
+  
+  /* EN MÓVILES: ELIMINAR desplazamiento lateral para evitar superposición */
+  .footer-enlaces a:first-child,
+  .footer-enlaces a:last-child {
+    position: static; /* Quitar posición relativa */
+    left: auto;
+    right: auto;
+  }
+}
+
+/* MÓVILES PEQUEÑOS (480px o menos) */
+@media (max-width: 480px) {
+  .footer-video {
+    height: 180px;
+  }
+  
+  .footer-texto h1 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .footer-enlaces h2, .footer-enlaces h3 {
+    font-size: 0.9rem;
+    white-space: normal; /* Permitir que el texto se parta si es necesario */
+    text-align: center;
+  }
+  
+  .footer-enlaces a {
+    padding: 8px 10px; /* Padding reducido para móviles */
+  }
+}
+
+/* MÓVILES MUY PEQUEÑOS (360px o menos) */
+@media (max-width: 360px) {
+  .footer-enlaces {
+    flex-direction: column; /* SOLO EN MÓVILES MUY PEQUEÑOS: poner uno debajo del otro */
+    gap: 15px;
+  }
+  
+  .footer-enlaces h2, .footer-enlaces h3 {
+    font-size: 0.8rem;
+  }
+}

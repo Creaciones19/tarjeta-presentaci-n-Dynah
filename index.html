@@ -5,464 +5,37 @@
   <meta name="description" content="Busva Home Broker, especialistas en remates bancarios. Descubre propiedades a precios increíbles con seguridad y transparencia.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Busva Home Broker</title>
-  <style>
-   
-body {
-  font-family: Arial, sans-serif; /* Fuente de la página */
-  margin: 0; /* Elimina márgenes del cuerpo */
-  padding: 0; /* Elimina el relleno del cuerpo */
-  background: url('fondo amarillo.png') center no-repeat fixed; /* Imagen de fondo centrada y fija */
-  background-size: cover; /* Escala el fondo para cubrir toda la pantalla */
-  color: white; /* Color del texto negro*/
-  font-weight: 900; /* Texto en negritas muy fuerte */
-  text-align: center; /* Centra el texto en toda la página */
-}
-
-/* Sección de encabezado */
-.header {
-  padding: 20px; /* Espaciado interno en la parte superior e inferior */
-  color: white; /* Color del texto del encabezado */
-  font-weight: 900; /* Texto en negritas muy fuerte */
-  text-align: center; /* Centra el contenido dentro del encabezado */
-}
-
-/* Contenedor circular para el logotipo */
-.header .logo-container {
-  width: 120px; /* Ancho del contenedor */
-  height: 120px; /* Alto del contenedor */
-  border-radius: 50%; /* Hace el contenedor circular */
-  overflow: hidden; /* Esconde contenido fuera del borde circular */
-  margin: 0 auto; /* Centra horizontalmente */
-  background-color: #000; /* Fondo negro del contenedor */
-  display: flex; /* Habilita Flexbox para centrar contenido */
-  align-items: center; /* Centra verticalmente el contenido */
-  justify-content: center; /* Centra horizontalmente el contenido */
-}
-
-/* Imagen dentro del contenedor del logotipo */
-.header img {
-  width: 100%; /* Imagen ocupa todo el ancho del contenedor */
-  height: 100%; /* Imagen ocupa todo el alto del contenedor */
-  object-fit: cover; /* Escala la imagen manteniendo proporciones */
-}
-
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-}
-
-.image-container img {
-    max-width: 100%;
-    height: auto;
-}
-/* Estilo de los títulos principales */
-h2 {
-  font-size: 36px; /* Tamaño del texto del título */
-  margin: 20px 0; /* Espaciado arriba y abajo */
-}
-
-/* Redes Sociales */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.social-icons img {
-  width: 70px;
-  height: 70px;
-  transition: transform 0.3s, opacity 0.3s;
-  cursor: pointer;
-}
-
-.social-icons img:hover {
-  transform: scale(1.2);
-  opacity: 0.8;
-}
-
-
-/* Botón de Ubicación */
-.location-btn {
-  display: inline-block;
-  padding: 15px 20px;
-  background-color: #007BFF;
-  color: #FFF;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.location-btn:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-/* Estilo general para párrafos */
-p {
-  margin: 20px auto; /* Espaciado arriba y abajo, centrado horizontalmente */
-  max-width: 700px; /* Ancho máximo para limitar el texto */
-}
-
-/* Sección de propiedades destacadas */
-.property {
-  text-align: center; /* Centra el contenido de la sección */
-  margin: 40px 0; /* Espaciado arriba y abajo */
-}
-
-/* Imagen de la propiedad */
-.property img {
-  width: 80%; /* Imagen ocupa el 80% del contenedor */
-  max-width: 400px; /* Ancho máximo de la imagen */
-  margin: 20px 0; /* Espaciado arriba y abajo */
-}
-
-/* Botones amarillos para enlaces */
-.btn-yellow {
-  display: inline-block; /* Se comporta como un bloque en línea */
-  margin: 20px 10px; /* Espaciado entre botones */
-  padding: 10px 20px; /* Espaciado interno (vertical, horizontal) */
-  background-color: #FFD700; /* Fondo amarillo */
-  color: #000; /* Texto negro */
-  text-decoration: none; /* Quita subrayado de enlaces */
-  font-weight: bold; /* Texto en negrita */
-  border: 2px solid #FFD700; /* Borde del mismo color que el fondo */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: background-color 0.3s, color 0.3s; /* Transición suave al pasar el cursor */
-}
-
-/* Efecto hover para botones amarillos */
-.btn-yellow:hover {
-  background-color: #000; /* Fondo negro */
-  color: #FFD700; /* Texto amarillo */
-}
-
-/* Botón de contacto de WhatsApp */
-.contact-btn {
-  display: flex; /* Flexbox para alinear ícono y texto */
-  align-items: center; /* Centra verticalmente el contenido */
-  justify-content: center; /* Centra horizontalmente el contenido */
-  gap: 10px; /* Espaciado entre ícono y texto */
-  margin: 20px auto; /* Espaciado arriba y abajo, centrado horizontalmente */
-  padding: 15px 20px; /* Espaciado interno (vertical, horizontal) */
-  font-size: 18px; /* Tamaño del texto */
-  font-weight: bold; /* Texto en negrita */
-  color: #FFF; /* Texto blanco */
-  background-color: #25D366; /* Fondo verde de WhatsApp */
-  border: none; /* Sin bordes */
-  border-radius: 10px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor a "mano" */
-  text-transform: uppercase; /* Texto en mayúsculas */
-  transition: background-color 0.3s, transform 0.2s; /* Efecto de transición */
-  max-width: 400px; /* Ancho máximo del botón */
-  width: 90%; /* Ocupa el 90% del ancho disponible */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efecto 3D */
-}
-
-/* Ícono dentro del botón de WhatsApp */
-.contact-btn img {
-  width: 24px; /* Ancho del ícono */
-  height: 24px; /* Alto del ícono */
-}
-
-/* Efecto hover para el botón de WhatsApp */
-.contact-btn:hover {
-  background-color: #128C7E; /* Cambia a un tono más oscuro de verde */
-  transform: scale(1.1); /* Aumenta el tamaño del botón ligeramente */
-}
-  /* Video Section */
-  iframe {
-      width: 80%;
-      max-width: 600px;
-      height: 315px;
-      margin: 20px auto;
-      border: 3px solid #FFD700;
-      border-radius: 10px;
-    }
-
-    /* QR Section */
-    .qr img {
-      width: 150px;
-      margin: 20px 0;
-    }
-
-    /* Services Section without bullets */
-    .services-list {
-      list-style-type: none; /* Elimina los puntos */
-      padding: 0;
-    }
-
-    .services-list li {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-
-    /* Contact Button Styles */
-    .contact-btn {
-      display: inline-block;
-      margin: 20px auto;
-      padding: 15px 30px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #FFF;
-      background-color: #28a745; /* Verde WhatsApp */
-      border: 2px solid #28a745;
-      border-radius: 10px;
-      cursor: pointer;
-      animation: pulse 1.5s infinite;
-      text-transform: uppercase;
-      transition: background-color 0.3s, color 0.3s, transform 0.2s;
-    }
-
-    /* Hover Effect */
-    .contact-btn:hover {
-      background-color: #FFF;
-      color: #28a745;
-      transform: scale(1.1);
-    }
-
-    /* Pulse Animation */
-    @keyframes pulse {
-      0%, 100% {
-        box-shadow: 0 0 10px #28a745;
-      }
-      50% {
-        box-shadow: 0 0 20px #28a745;
-      }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .icon {
-        width: 40px;
-        height: 40px;
-      }
-
-      .btn {
-        padding: 8px 15px;
-      }
-      img {
-    width: 100%;
-    height: auto;
-}
-
-      iframe {
-        width: 90%;
-      }
-    }
-    /* Sección de Blog */
- .blog-section {
-  padding: 40px 20px;
-  background-color: transparent; /* Mantiene el fondo del proyecto */
-  color: #000; /* Puedes ajustar el color del texto si es necesario */
-}
-
-.blog-section h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 40px;
-  font-weight: bold;
-  color: white; /* Forzar color blanco para el encabezado */
-}
-
-.blog-item {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-bottom: 40px;
-  justify-content: space-between;
-}
-
-.blog-image {
-  flex: 1;
-  padding-right: 20px;
-}
-
-.blog-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.blog-text {
-  flex: 2;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-.blog-text h3 {
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-
-.blog-text p {
-  font-size: 18px;
-  line-height: 1.6;
-}
-.blog-section {
-  padding: 40px 20px;
-  background-color: transparent;
-  color: #000;
-}
-
-.blog-section h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 40px;
-  font-weight: bold;
-  color: white;
-}
-
-.blog-item {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-bottom: 40px;
-  justify-content: space-between;
-  gap: 20px; /* Agregar espacio entre imagen y texto */
-}
-
-.blog-image {
-  flex: 1;
-}
-
-.blog-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 20px; /* Añadir margen superior para separar de encabezado */
-}
-
-.blog-text {
-  flex: 2;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-.blog-text h3 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  margin-top: 20px; /* Separar el texto del encabezado */
-}
-
-.blog-text p {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.blog-contact {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.blog-contact .contact-btn {
-  display: inline-block;
-  padding: 15px 30px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #FFF;
-  background-color: #28a745;
-  border: 2px solid #28a745;
-  border-radius: 10px;
-  cursor: pointer;
-  text-transform: uppercase;
-  animation: pulse 1.5s infinite;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.blog-contact .contact-btn:hover {
-  background-color: #FFF;
-  color: #28a745;
-  transform: scale(1.1);
-}
-
-/* Pulse Animation */
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 10px #28a745;
-  }
-  50% {
-    box-shadow: 0 0 20px #28a745;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .blog-item {
-    flex-direction: column; /* Ajusta a una columna para pantallas pequeñas */
-  }
-
-  .blog-text {
-    font-size: 16px; /* Ajuste de tamaño de fuente en pantallas pequeñas */
-  }
-
-  .blog-image img {
-    width: 100%;
-    margin-top: 20px; /* Separar las imágenes de los encabezados también en móviles */
-  }
-
- 
-}
-
-
-/* Botn al final del blog */
-.blog-contact {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.blog-contact .contact-btn {
-  display: inline-block;
-  padding: 15px 30px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #FFF;
-  background-color: #28a745;
-  border: 2px solid #28a745;
-  border-radius: 10px;
-  cursor: pointer;
-  text-transform: uppercase;
-  animation: pulse 1.5s infinite;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.blog-contact .contact-btn:hover {
-  background-color: #FFF;
-  color: #28a745;
-  transform: scale(1.1);
-}
-footer {
-  color: white; /* Cambia el color del texto a blanco */
-  background-color: #000; /* Fondo negro */
-  padding: 20px; /* Añadir algo de espacio alrededor del contenido */
-  text-align: center; /* Centra el contenido dentro del footer */
-}
-
-.tiktok-logo {
-  filter: invert(1); /* Cambia los colores al opuesto (blanco en este caso) */
-  width: 40px;
-  height: 40px;
-}
-  </style>
+  <link rel="stylesheet" href="index.css">
+  
+  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Busva Home Broker, especialistas en remates bancarios. Descubre propiedades a precios increíbles con seguridad y transparencia.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Busva Home Broker</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<!-- Sección de encabezado -->
-<div class="header">
-  <div class="logo-container">
-    <img src="logodinahblanco.png" alt="Logo de Busva Home Broker">
+  <!-- Header con Video -->
+  <header class="header-video">
+    <video autoplay muted loop playsinline class="video-fondo">
+      <source src="videogd.mp4" type="video/mp4">
+      Tu navegador no soporta videos.
+    </video>
+  </header>
+
+  <!-- Sección de encabezado -->
+  <div class="header">
+    <div class="logo-container">
+      <img src="DG (2).svg" alt="Logo DG">
+    </div>
+    <h2>¿Quiénes somos?</h2>
+    <p>Somos especialistas en <strong>remates bancarios</strong>, con más de una década de experiencia en el mercado.</p>  
+    <p>Nos enfocamos en ofrecer oportunidades seguras y accesibles, garantizando transparencia en cada operación.</p>  
+    <p>Nuestra misión es facilitar la compra de <strong>remates bancarios</strong> a precios exclusivos, de manera sencilla y confiable.</p>
   </div>
-  <h2>¿Quiénes somos?</h2>
-  <p>Somos especialistas en <strong>remates bancarios</strong>, con más de una década de experiencia en el mercado.</p>  
-  <p>Nos enfocamos en ofrecer oportunidades seguras y accesibles, garantizando transparencia en cada operación.</p>  
-  <p>Nuestra misión es facilitar la compra de <strong>remates bancarios</strong> a precios exclusivos, de manera sencilla y confiable.</p>
   
 </div>
 <!-- Sección de "iconnos redes sociales" --> 
@@ -535,8 +108,8 @@ footer {
      <!-- video-->
    <div class="section">
     <h2>Video</h2>
-    <iframe src="https://www.youtube.com/embed/4JOgNtLlBis" frameborder="0" allowfullscreen width="560" height="315"></iframe>
-  </div>
+    <iframe src="videodgsinsonido.mp4" frameborder="0" allowfullscreen width="560" height="315"></iframe>
+  </div>->
  
   <!-- QR Section -->
   <div class="qr">
@@ -608,10 +181,24 @@ footer {
       ¡Contáctame Ahora!
     </button>
   </div>
-   <!-- Pie de página -->
-  <footer>
-    <P>DYNAH GOMEZ</P>
-   <p>Gerente Reginal de Busva HomeBrokers Jalisco</p> 
+    <!-- Footer -->
+       <!-- Footer con Video -->
+  <footer class="footer-video">
+    <video autoplay muted loop playsinline>
+      <source src="videopiepag.mp4" type="video/mp4">
+      Tu navegador no soporta videos.
+    </video>
+    <div class="footer-texto">
+      <h1>OFICINAS EN:</h1>
+      <div class="footer-enlaces">
+        <a href="https://maps.app.goo.gl/WLS52Rn54Q3VUW7M9" target="_blank">
+          <h2>OFICINAS EN CDMX 👆</h2>
+        </a>
+        <a href="https://maps.app.goo.gl/9dY2NnFZk1fbxWEv5" target="_blank">
+          <h3>OFICINAS EN JALISCO 👆</h3>
+        </a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
