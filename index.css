@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #ede2d8 85%, #051d40 100%) !important;
+  background: linear-gradient(to bottom, #f5e9df 0%, #7c004c 100%) !important;
   background-size: cover !important;
   color: #202122 !important;
   font-weight: 900;
@@ -192,7 +192,7 @@ p {
   margin: 20px 0;
 }
 
-/* Botones amarillos para enlaces */
+/* Botones amarillos */
 .btn-yellow {
   display: inline-block;
   margin: 20px 10px;
@@ -211,7 +211,7 @@ p {
   color: #FFD700;
 }
 
-/* Botón de contacto de WhatsApp */
+/* Botón WhatsApp */
 .contact-btn {
   display: flex;
   align-items: center;
@@ -238,7 +238,7 @@ p {
   transform: scale(1.1);
 }
 
-/* Video Section */
+/* Video */
 iframe {
   width: 80%;
   max-width: 600px;
@@ -246,15 +246,16 @@ iframe {
   margin: 20px auto;
   border: 3px solid #FFD700;
   border-radius: 10px;
+  display: block;
 }
 
-/* QR Section */
+/* QR */
 .qr img {
   width: 150px;
   margin: 20px 0;
 }
 
-/* Services Section without bullets */
+/* Lista de servicios */
 .services-list {
   list-style-type: none;
   padding: 0;
@@ -263,6 +264,84 @@ iframe {
 .services-list li {
   font-size: 18px;
   margin: 10px 0;
+}
+
+/* ----------------------------- */
+/*           RESPONSIVE          */
+/* ----------------------------- */
+
+/* TABLET */
+@media (max-width: 900px) {
+  h2 {
+    font-size: 30px;
+  }
+
+  .social-icons img {
+    width: 55px;
+    height: 55px;
+  }
+
+  iframe {
+    width: 90%;
+    height: 280px;
+  }
+
+  .btn-yellow {
+    padding: 8px 16px;
+    font-size: 15px;
+  }
+
+  p {
+    max-width: 90%;
+    font-size: 17px;
+  }
+}
+
+/* TELÉFONOS */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 26px;
+  }
+
+  .social-icons img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .property img {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 230px;
+  }
+
+  .location-btn {
+    font-size: 14px;
+    padding: 12px 18px;
+  }
+
+  .contact-btn {
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+
+  .btn-yellow {
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .services-list li {
+    font-size: 16px;
+  }
 }
 
 /* Pulse Animation */
@@ -375,161 +454,566 @@ iframe {
     height: 120px;
   }
   
-  .footer-video {
-    height: 180px;
-  }
-  
-  .footer-texto h1 {
-    font-size: 1.2rem;
-  }
-  
-  .footer-enlaces h2, .footer-enlaces h3 {
-    font-size: 1rem;
-  }
 }
-/* FOOTER CON VIDEO RESPONSIVE */
-.footer-video {
-  position: relative;
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  margin-top: 40px;
+.blog-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+  text-align: center;
 }
 
-.footer-video video {
+.blog-text {
+  flex: 1;
+  min-width: 300px;
+  color: #202122;
+}
+
+.blog-image {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+.carousel img {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-.footer-texto {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
+.carousel img.active {
+  opacity: 1;
+}
+
+.footer-content {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    max-height: 300px; /* 🔹 Ajusta este valor según lo pequeño que quieras */
+}
+
+
+.footer-content video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto-video {
+    position: absolute;
+    top: 20px;             /* Casi arriba */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3;
+    color: white;
+}
+
+.texto-video h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+.texto-video div {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%; /* Antes era 70-90% */
+    max-width: 100%; /* Para que ocupe todo el espacio del video */
+    margin: 0 auto;
+    padding: 0 40px; /* Empuja un poco hacia los bordes */
+}
+
+.texto-video a h2 {
+    color: #FF1493; /* Vino */
+    font-size: 2rem;
+    text-shadow: 1px 1px 4px rgba(255,255,255,0.7);
+}
+
+.texto-video a h3 {
+    color: #FF1493; /* Rosa fuerte */
+    font-size: 2rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+.texto-video div {
+    display: flex;
+    justify-content: center; /* centra el grupo */
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.texto-video a:first-child {
+    position: relative;
+    left: -280px; /* mueve CDMX más a la izquierda */
+}
+
+.texto-video a:last-child {
+    position: relative;
+    right: -280px; /* mueve Jalisco más a la derecha */
+}
+.carousel {
+  position: relative;
   width: 100%;
-  z-index: 2;
-}
-
-.footer-texto h1 {
-  font-family: Arial, sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  text-shadow: 0 0 8px rgba(0,0,0,0.7);
-  margin-bottom: 30px;
-  color: white;
-}
-
-.footer-enlaces {
+  height: 400px; /* Altura del carrusel */
+  overflow: hidden;
+  border-radius: 16px;
   display: flex;
-  justify-content: space-between; /* Distribuye el espacio entre los enlaces */
-  width: 80%; /* Ancho reducido para que no lleguen a los bordes */
-  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  background: #fff; /* Fondo blanco por si la imagen no cubre todo */
+}
+
+.carousel img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* 🔹 Asegura que la imagen no se recorte */
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+/* 🔹 Botón de pausa/play */
+#pause-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#pause-btn:hover {
+  background: rgba(255, 255, 255, 1);
+}
+ .cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+/* ----------- FLIP CARD ----------- */
+.flip-card {
+  width: 400px;
+  height: 420px;
+  perspective: 1000px;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
   position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
 }
 
-/* AJUSTE DE POSICIÓN - CDMX más a la izquierda PERO SIN CORTARSE */
-.footer-enlaces a:first-child {
-  position: relative;
-  left: -20px; /* REDUCIDO: Menos desplazamiento hacia izquierda */
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
 }
 
-/* AJUSTE DE POSICIÓN - Jalisco más a la derecha PERO SIN CORTARSE */
-.footer-enlaces a:last-child {
-  position: relative;
-  right: -20px; /* REDUCIDO: Menos desplazamiento hacia derecha */
+.flip-front, .flip-back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 18px;
+  overflow: hidden;
 }
 
-.footer-enlaces a {
-  text-decoration: none;
-  display: block; /* Asegura que sean elementos de bloque para mejor clic */
-  padding: 10px 15px; /* Área de clic más grande */
-  transition: transform 0.3s ease; /* Efecto al pasar el mouse */
+.flip-front img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
 }
 
-/* Efecto hover para mejor experiencia de usuario */
-.footer-enlaces a:hover {
-  transform: scale(1.05); /* Ligero aumento al pasar el mouse */
+.flip-front h3 {
+  text-align: center;
+  background: white;
+  padding: 12px;
+  font-size: 20px;
 }
 
-.footer-enlaces h2, .footer-enlaces h3 {
-  color: #FF1493 !important;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 4px rgba(255,255,255,0.7);
-  margin: 0;
-  font-weight: bold;
-  white-space: nowrap; /* Evita que el texto se parta */
+/* Parte trasera */
+.flip-back {
+  background: #fff;
+  transform: rotateY(180deg);
+  overflow: hidden;
+  padding: 0;
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
+.flip-back .back-img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
-/* TABLETS y MÓVILES GRANDES (768px o menos) */
-@media (max-width: 768px) {
+/* Slider */
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ----------- PARTNERS ----------- */
+
+.partners-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.partners-section h2 {
+  font-size: 32px;
+  color: #202122;
+  margin-bottom: 20px;
+}
+
+.partners-section p {
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  color: #202122;
+  font-weight: 600;
+}
+
+/* CONTENEDOR DE LOGOS EN UNA LÍNEA */
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.partners-logos img {
+  width: 110px;
+  height: 60px;
+  object-fit: contain;
+  background: white;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.partners-logos img:hover {
+  transform: scale(1.05);
+}
+
+/* ----------------------------- */
+/*          RESPONSIVE           */
+/* ----------------------------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .flip-card {
+    width: 300px;
+    height: 360px;
+  }
+
+  .flip-front h3 {
+    font-size: 18px;
+  }
+
+  .partners-section h2 {
+    font-size: 28px;
+  }
+
+  .partners-section p {
+    font-size: 18px;
+  }
+
+  .partners-logos img {
+    width: 90px;
+    height: 50px;
+  }
+}
+
+/* Teléfonos */
+@media (max-width: 600px) {
+  .flip-card {
+    width: 90%;  /* Se adapta al ancho del teléfono */
+    height: 320px;
+    margin: 0 auto;
+  }
+
+  .flip-front h3 {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .partners-section h2 {
+    font-size: 24px;
+  }
+
+  .partners-section p {
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .partners-logos {
+    gap: 10px;
+  }
+
+  .partners-logos img {
+    width: 70px;
+    height: 40px;
+    padding: 4px;
+  }
+}
+
+/* Tabletas: pantallas medianas */
+@media (max-width: 1024px) {
+  .header-video {
+    height: 150px;
+  }
+
   .footer-video {
     height: 200px;
   }
-  
-  .footer-enlaces {
-    flex-direction: row; /* MANTENER en fila para que estén lado a lado */
-    justify-content: space-around; /* Distribución más equilibrada */
-    width: 90%; /* Más ancho para móviles */
-    gap: 10px; /* Espacio entre enlaces */
+
+  .texto-video h1 {
+    font-size: 2rem;
   }
-  
-  .footer-texto h1 {
+
+  .texto-video a h2,
+  .texto-video a h3 {
     font-size: 1.5rem;
-    margin-bottom: 20px;
   }
-  
-  .footer-enlaces h2, .footer-enlaces h3 {
-    font-size: 1.1rem;
+
+  .flip-card {
+    width: 300px;
+    height: 350px;
   }
-  
-  /* EN MÓVILES: ELIMINAR desplazamiento lateral para evitar superposición */
-  .footer-enlaces a:first-child,
-  .footer-enlaces a:last-child {
-    position: static; /* Quitar posición relativa */
-    left: auto;
-    right: auto;
+
+  .partners-logos img {
+    width: 90px;
+    height: 50px;
+  }
+
+  iframe {
+    width: 90%;
   }
 }
 
-/* MÓVILES PEQUEÑOS (480px o menos) */
-@media (max-width: 480px) {
+/* Móviles: pantallas pequeñas */
+@media (max-width: 768px) {
+  .header-video {
+    height: 120px;
+  }
+
   .footer-video {
     height: 180px;
   }
-  
-  .footer-texto h1 {
+
+  .texto-video h1 {
+    font-size: 1.6rem;
+  }
+
+  .texto-video a h2,
+  .texto-video a h3 {
     font-size: 1.2rem;
-    margin-bottom: 15px;
   }
-  
-  .footer-enlaces h2, .footer-enlaces h3 {
-    font-size: 0.9rem;
-    white-space: normal; /* Permitir que el texto se parta si es necesario */
-    text-align: center;
+
+  .flip-card {
+    width: 250px;
+    height: 300px;
   }
-  
-  .footer-enlaces a {
-    padding: 8px 10px; /* Padding reducido para móviles */
+
+  .partners-logos img {
+    width: 70px;
+    height: 40px;
+  }
+
+  iframe {
+    width: 100%;
   }
 }
 
-/* MÓVILES MUY PEQUEÑOS (360px o menos) */
-@media (max-width: 360px) {
-  .footer-enlaces {
-    flex-direction: column; /* SOLO EN MÓVILES MUY PEQUEÑOS: poner uno debajo del otro */
-    gap: 15px;
+/* Móviles muy pequeños */
+@media (max-width: 480px) {
+  .header-video {
+    height: 100px;
   }
-  
-  .footer-enlaces h2, .footer-enlaces h3 {
-    font-size: 0.8rem;
+
+  .footer-video {
+    height: 150px;
   }
+
+  .texto-video h1 {
+    font-size: 1.4rem;
+  }
+
+  .texto-video a h2,
+  .texto-video a h3 {
+    font-size: 1rem;
+  }
+
+  .flip-card {
+    width: 200px;
+    height: 250px;
+  }
+
+  .partners-logos img {
+    width: 60px;
+    height: 35px;
+  }
+}
+/* ----- FIX RESPONSIVE GLOBAL ----- */
+
+/* VIDEO DE TEXTO: acomodo natural */
+.texto-video div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding: 0 20px;
+  position: static !important;
+}
+
+/* Quitamos posiciones forzadas que hacían desastre */
+.texto-video a:first-child,
+.texto-video a:last-child {
+  position: static !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: none !important;
+}
+
+/* Carruseles se adaptan sin recorte */
+.carousel {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  aspect-ratio: 4/3;
+  margin: 0 auto;
+}
+
+/* Imagenes del carrusel responsivas */
+.carousel img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+}
+
+/* Flip Cards: se acomodan solas */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.flip-card {
+  max-width: 320px;
+  width: 100%;
+}
+
+/* ---------- MEDIA QUERIES CORREGIDOS ---------- */
+
+@media (max-width: 768px) {
+  /* Texto del video en columna (antes se montaba) */
+  .texto-video div {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Carrusel más pequeño */
+  .carousel {
+    max-width: 100%;
+    aspect-ratio: 4/3;
+  }
+
+  /* Flip cards */
+  .flip-card {
+    max-width: 260px;
+  }
+
+  /* Blog items en columna */
+  .blog-item {
+    flex-direction: column !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .texto-video h1 {
+    font-size: 1.2rem;
+  }
+
+  .texto-video a h2,
+  .texto-video a h3 {
+    font-size: 1rem;
+  }
+
+  .carousel {
+    aspect-ratio: 1/1;
+  }
+
+  .flip-card {
+    max-width: 220px;
+  }
+
+  .blog-item {
+    flex-direction: column;
+  }
+}
+
+
+/* VIDEO RESPONSIVE */
+.responsive-media video {
+  width: 100%;
+  height: auto;
+  max-width: 700px;  /* límite en pantallas grandes */
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 3px solid #FFD700;
+}
+
+/* Mantener proporción en pantallas pequeñas */
+.responsive-media {
+  text-align: center;
+  padding: 10px;
 }
