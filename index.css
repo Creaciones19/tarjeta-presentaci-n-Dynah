@@ -1,14 +1,5 @@
 /* COLORES DEL BODY CORREGIDOS */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom, #f5e9df 0%, #7c004c 100%) !important;
-  background-size: cover !important;
-  color: #202122 !important;
-  font-weight: 900;
-  text-align: center;
-}
+
 
 /* HEADER CON VIDEO RESPONSIVE */
 .header-video {
@@ -126,12 +117,6 @@ body {
   height: auto;
 }
 
-/* Estilo de los títulos principales */
-h2 {
-  font-size: 36px;
-  margin: 20px 0;
-  color: #202122;
-}
 
 /* Redes Sociales */
 .social-icons {
@@ -172,12 +157,6 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Estilo general para párrafos */
-p {
-  margin: 20px auto;
-  max-width: 700px;
-  color: #202122;
-}
 
 /* Sección de propiedades destacadas */
 .property {
@@ -253,6 +232,29 @@ iframe {
 .qr img {
   width: 150px;
   margin: 20px 0;
+}
+.qr + p {
+  max-width: 900px;      /* Evita desbordes */
+  margin: 20px auto;     /* Centrado horizontal */
+  text-align: center;    /* Centra el texto */
+  padding: 0 20px;       /* Espacio para móviles */
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {   /* Tablets */
+  .qr + p {
+    max-width: 95%;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {   /* Celulares */
+  .qr + p {
+    max-width: 100%;
+    font-size: 1rem;
+  }
 }
 
 /* Lista de servicios */
@@ -354,67 +356,116 @@ iframe {
   }
 }
 
-/* Sección de Blog */
+/* Fondo general solo para el BLOG */
 .blog-section {
-  padding: 40px 20px;
-  background-color: transparent;
-}
-
-.blog-section h2 {
+  padding: 60px 20px;
   text-align: center;
-  font-size: 36px;
-  margin-bottom: 40px;
-  font-weight: bold;
-  color: #202122;
 }
 
+/* Título principal */
+.blog-section h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  
+}
+
+/* TODOS LOS P DEL SITIO */
+p {
+  font-size: 1.4rem !important;
+  line-height: 1.6 !important;
+  color: #0A1A33 !important; /* Azul marino */
+  font-weight: 500;
+}
+
+/* ─────────────────────────────
+   ITEM DEL BLOG
+────────────────────────────── */
 .blog-item {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-bottom: 40px;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: center;  /* 🔹 Centrado horizontal */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 0 auto 70px auto; /* 🔹 Centrado del bloque */
+  max-width: 1100px;
 }
+
+/* Texto centrado, pero elegante */
+
+.blog-section p {
+  font-size: 1.4rem !important; /* Aumenta el tamaño */
+  line-height: 1.6 !important;  /* Más aire entre líneas */
+  color: #0A1A33 !important;    /* Azul marino */
+  font-weight: 500;             /* Un poco más fuerte */
+}
+
+
+/* ─────────────────────────────
+   IMAGENES
+────────────────────────────── */
 
 .blog-image {
   flex: 1;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
 }
 
-.blog-image img {
+.carousel {
+  position: relative;
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
+  max-width: 500px;   /* 🔹 Evita que se haga enorme */
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.blog-text {
-  flex: 2;
-  color: #202122;
-  font-family: Arial, sans-serif;
+.carousel img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
-.blog-text h3 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  margin-top: 20px;
+.carousel img.active {
+  opacity: 1;
 }
 
-.blog-text p {
+#pause-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50%;
   font-size: 18px;
-  line-height: 1.6;
+  cursor: pointer;
 }
 
-.blog-contact {
-  text-align: center;
-  margin-top: 20px;
-}
 
-.tiktok-logo {
-  filter: invert(1);
-  width: 40px;
-  height: 40px;
+/* ─────────────────────────────
+   RESPONSIVE
+────────────────────────────── */
+@media (max-width: 768px) {
+
+  .blog-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  .carousel {
+    height: 260px;
+  }
 }
 
 /* RESPONSIVE DESIGN */
@@ -455,46 +506,6 @@ iframe {
   }
   
 }
-.blog-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 20px;
-  text-align: center;
-}
-
-.blog-text {
-  flex: 1;
-  min-width: 300px;
-  color: #202122;
-}
-
-.blog-image {
-  flex: 1;
-  min-width: 300px;
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 320px;
-}
-
-.carousel img {
-  width: 100%;
-  height: 320px;     /* Ajusta la altura del bloque */
-  object-fit: cover; /* Recorta uniforme */
-  object-position: center; /* Centra la imagen */
-  border-radius: 10px;
-}
-
-.carousel img.active {
-  opacity: 1;
-}
-
 .footer-content {
     position: relative;
     width: 100%;
@@ -563,60 +574,12 @@ iframe {
     position: relative;
     right: -280px; /* mueve Jalisco más a la derecha */
 }
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 400px; /* Altura del carrusel */
-  overflow: hidden;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff; /* Fondo blanco por si la imagen no cubre todo */
-}
 
-.carousel img {
-  position: absolute;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain; /* 🔹 Asegura que la imagen no se recorte */
-  object-position: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
 
-.carousel img.active {
-  opacity: 1;
-}
-/* 🔹 Botón de pausa/play */
-#pause-btn {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-#pause-btn:hover {
-  background: rgba(255, 255, 255, 1);
-}
- .cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-}
 /* ----------- FLIP CARD ----------- */
 .flip-card {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 420px;
   perspective: 1000px;
 }
@@ -642,6 +605,7 @@ iframe {
   overflow: hidden;
 }
 
+/* Parte frontal */
 .flip-front img {
   width: 100%;
   height: 80%;
@@ -650,9 +614,12 @@ iframe {
 
 .flip-front h3 {
   text-align: center;
-  background: white;
+  background: #ffffff;  /* fondo blanco limpio */
+  color: #7a004d;       /* vino oscuro elegante */
   padding: 12px;
   font-size: 20px;
+  font-weight: 900;
+  border-bottom: 3px solid #b3007a; /* línea inferior vino (opcional pero muy estética) */
 }
 
 /* Parte trasera */
@@ -663,33 +630,53 @@ iframe {
   padding: 0;
 }
 
+/* Ajuste de imagen trasera (si usas una sola imagen) */
 .flip-back .back-img {
   width: 100%;
   height: 50%;
-  object-fit: cover;
+  object-fit: contain; /* <-- evita cortes */
   border-radius: 10px;
 }
 
-/* Slider */
+/* ---------- SLIDER ---------- */
 .slider {
   width: 100%;
   height: 100%;
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  align-items: center;         /* Centra las imágenes verticalmente */
 }
 
 .slide {
   min-width: 100%;
   height: 100%;
   scroll-snap-align: center;
+
+  display: flex;               /* Centra la imagen */
+  justify-content: center;
+  align-items: center;
+  background: #fff;            /* fondo para que no se vea vacío */
 }
 
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;         /* <-- LA CLAVE: NO CORTA NUNCA */
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .flip-card {
+    height: 360px; /* más cómodo en tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-card {
+    height: 320px; /* mejor en celulares */
+  }
 }
 
 /* ----------- PARTNERS ----------- */
@@ -1071,3 +1058,81 @@ iframe {
     }
 }
 
+/* ===================== */
+/*   ESTILOS DE COLORES EN TODO EL CUERPO   */
+/* ===================== */
+
+/* 1) Fondo beige limpio */
+body {
+  background: #F7EDE6 !important;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #0A1A33;
+  text-align: center;
+}
+
+/* 2) H1 — Degradado verde–azul */
+h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  background: #ff007f; /* 🌸 Rosa fuerte */
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.blog-text h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: #ff007f; /* Rosa fuerte */
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.blog-title {
+  color: #ff3ca6; /* rosa */
+}
+
+/* 3) H2 — Azul fuerte */
+h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0074E8;
+  margin: 20px 0 10px;
+}
+
+/* 4) H3 — Azul marino */
+h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0A1A33;
+  margin: 15px 0 5px;
+}
+
+/* 5) Párrafos — Negro */
+
+.blog-text h3 {
+  color: #007BFF !important;
+  font-weight: 700;
+}
+
+/* 6) Botones — Mismo degradado del H1 */
+.btn-seguro,
+button {
+  background: linear-gradient(90deg, #7ED957, #0A66C2);
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn-seguro:hover,
+button:hover {
+  transform: scale(1.05);
+}
