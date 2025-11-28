@@ -606,10 +606,22 @@ p {
 }
 
 /* Parte frontal */
+/* Ajuste para que el h2 aparezca */
 .flip-front img {
   width: 100%;
-  height: 80%;
+  height: 70%; /* <-- ANTES 80%, ahora 70% para que quepa el h2 */
   object-fit: cover;
+}
+
+.flip-front h2 {
+  text-align: center;
+  background: #ffffff;
+  color: #7a004d;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  border-top: 2px solid #b3007a;
+  margin: 0;
 }
 
 .flip-front h3 {
@@ -678,6 +690,23 @@ p {
     height: 320px; /* mejor en celulares */
   }
 }
+/* Tablets */
+@media (max-width: 768px) {
+  .flip-front h2 {
+    bottom: 8px;
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .flip-front h2 {
+    bottom: 6px;
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+}
 
 /* ----------- PARTNERS ----------- */
 
@@ -728,64 +757,62 @@ p {
 /* ----------------------------- */
 /*          RESPONSIVE           */
 /* ----------------------------- */
-
 /* Tablets */
 @media (max-width: 900px) {
-  .flip-card {
-    width: 300px;
-    height: 360px;
-  }
-
-  .flip-front h3 {
-    font-size: 18px;
-  }
-
-  .partners-section h2 {
-    font-size: 28px;
-  }
-
-  .partners-section p {
-    font-size: 18px;
-  }
-
-  .partners-logos img {
-    width: 90px;
-    height: 50px;
-  }
+    .flip-card {
+        width: 300px;
+        height: auto; /* altura automática */
+    }
+    .flip-front h2, .flip-front h3 {
+        font-size: clamp(16px, 4vw, 20px); /* tamaño adaptable */
+        padding: 5px 8px;
+        margin: 5px 0;
+        display: block; /* asegurar que se muestre */
+        word-wrap: break-word;
+    }
+    .partners-section h2 {
+        font-size: 28px;
+    }
+    .partners-section p {
+        font-size: 18px;
+    }
+    .partners-logos img {
+        width: 90px;
+        height: 50px;
+    }
 }
 
 /* Teléfonos */
 @media (max-width: 600px) {
-  .flip-card {
-    width: 90%;  /* Se adapta al ancho del teléfono */
-    height: 320px;
-    margin: 0 auto;
-  }
-
-  .flip-front h3 {
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  .partners-section h2 {
-    font-size: 24px;
-  }
-
-  .partners-section p {
-    font-size: 16px;
-    max-width: 90%;
-  }
-
-  .partners-logos {
-    gap: 10px;
-  }
-
-  .partners-logos img {
-    width: 70px;
-    height: 40px;
-    padding: 4px;
-  }
+    .flip-card {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .flip-front h2, .flip-front h3 {
+        font-size: clamp(14px, 5vw, 16px); /* tamaño adaptable */
+        padding: 4px 6px;
+        margin: 4px 0;
+        display: block;
+        word-wrap: break-word;
+    }
+    .partners-section h2 {
+        font-size: 24px;
+    }
+    .partners-section p {
+        font-size: 16px;
+        max-width: 90%;
+    }
+    .partners-logos {
+        gap: 10px;
+    }
+    .partners-logos img {
+        width: 70px;
+        height: 40px;
+        padding: 4px;
+    }
 }
+
 
 /* Tabletas: pantallas medianas */
 @media (max-width: 1024px) {
