@@ -1,590 +1,492 @@
-/* COLORES DEL BODY CORREGIDOS */
+/* =========================================================
+   CSS LIMPIO POR SECCIONES (REEMPLAZA TODO index.css POR ESTO)
+   - MÍNIMO global (solo reset + body)
+   - TODO lo demás va por clase de sección
+   ========================================================= */
 
+/* ---------- Variables ---------- */
+:root{
+  --bg: #F7EDE6;
 
-/* HEADER CON VIDEO RESPONSIVE */
-.header-video {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
+  --navy: #0A1A33;
+  --navy-2: #072050;
+
+  --blue: #0074E8;
+  --blue-soft: #6EC6FF;
+
+  --wine: #7a004d;
+  --pink: #ff007f;
+
+  --card-bg: rgba(255,255,255,0.55);
+  --card-brd: rgba(10, 26, 51, 0.12);
+  --shadow: 0 10px 26px rgba(0,0,0,0.08);
+
+  --radius: 18px;
+  --container: 1100px;
 }
 
-.header-video .video-fondo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-/* FOOTER CON VIDEO RESPONSIVE */
-.footer-video {
-  position: relative;
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  margin-top: 40px;
-}
-
-.footer-video video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.footer-texto {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  width: 100%;
-  z-index: 2;
-}
-
-.footer-texto h1 {
+/* ---------- Reset mínimo global (NO tipografías globales) ---------- */
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--bg);
   font-family: Arial, sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  text-shadow: 0 0 8px rgba(0,0,0,0.7);
-  margin-bottom: 20px;
+  color:var(--navy);
+  text-align:center;
+}
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; text-decoration:none; }
+
+/* =========================================================
+   HEADER VIDEO
+   ========================================================= */
+.header-video{
+  position: relative;
+  width: 100%;
+  height: clamp(120px, 22vw, 220px);
+  overflow: hidden;
+}
+.header-video .video-fondo{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
-.footer-enlaces {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.footer-enlaces a {
-  text-decoration: none;
-}
-
-.footer-enlaces h2, .footer-enlaces h3 {
-  color: #FF1493;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-  margin: 0;
-}
-
-/* Sección de encabezado */
-.header {
-  padding: 20px;
-  color: #202122;
-  font-weight: 900;
+/* =========================================================
+   HEADER LOGO
+   ========================================================= */
+.header{
+  padding: 20px 16px;
   text-align: center;
 }
-
-/* Contenedor circular para el logotipo */
-.header .logo-container {
+.header .logo-container{
   width: 120px;
   height: 120px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 auto;
-  background-color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto 10px;
+  background: #000;
+  display: grid;
+  place-items: center;
 }
-
-/* Imagen dentro del contenedor del logotipo */
-.header img {
+.header img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* =========================================================
+   CARD BASE (solo para secciones que tú decidas)
+   ========================================================= */
+.about-card,
+.section,
+.bloque-remates > section{
+  width: min(92%, 980px);
+  margin: 18px auto;
+  padding: 26px 22px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-brd);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* =========================================================
+   ABOUT WRAP + ABOUT CARD (texto y títulos SOLO aquí)
+   ========================================================= */
+.about-wrap{
+  padding: 28px 0 10px;
+}
+
+.about-card h2{
+  margin: 8px 0 12px;
+  font-size: clamp(1.35rem, 4vw, 2.35rem);
+  font-weight: 900;
+  color: var(--blue);
+  line-height: 1.12;
+  padding: 0 10px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.about-card p{
   width: 100%;
-  height: auto;
-}
-
-.image-container img {
-  max-width: 100%;
-  height: auto;
-}
-
-
-/* Redes Sociales */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.social-icons img {
-  width: 70px;
-  height: 70px;
-  transition: transform 0.3s, opacity 0.3s;
-  cursor: pointer;
-}
-
-.social-icons img:hover {
-  transform: scale(1.2);
-  opacity: 0.8;
-}
-
-/* Botón de Ubicación */
-.location-btn {
-  display: inline-block;
-  padding: 15px 20px;
-  background-color: #007BFF;
-  color: #FFF;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.location-btn:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-
-/* Sección de propiedades destacadas */
-.property {
+  max-width: 900px;
+  margin: 10px auto;
+  font-size: clamp(1rem, 2.1vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--navy);
   text-align: center;
-  margin: 40px 0;
 }
 
-/* Imagen de la propiedad */
-.property img {
-  width: 80%;
-  max-width: 400px;
-  margin: 20px 0;
+/* Redes */
+.social-icons{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin: 14px 0 4px;
+  flex-wrap:wrap;
+}
+.social-icons a{
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background: rgba(10,26,51,0.08);
+  border:1px solid rgba(10,26,51,0.12);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.social-icons a:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  background: rgba(10,26,51,0.12);
+}
+.social-icons img{
+  width:26px;
+  height:26px;
+  object-fit:contain;
 }
 
-/* Botones amarillos */
-.btn-yellow {
+/* =========================================================
+   SERVICIOS (TOTALMENTE AISLADO)
+   ========================================================= */
+.servicios{
+  padding: 26px 16px 34px;
+}
+
+.servicios-title{
+  margin: 8px 0 18px;
+  font-size: clamp(2rem, 6vw, 3.3rem);
+  font-weight: 900;
+  color: var(--blue-soft);
+  letter-spacing: .4px;
+}
+
+.services-grid{
+  width: min(92%, 1100px);
+  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+  padding: 0 10px;
+}
+
+/* Desktop intercalado */
+@media (min-width: 1025px){
+  .services-grid{
+    grid-template-columns: repeat(6, 1fr);
+    gap: 32px;
+  }
+  .service-card{ grid-column: span 2; }
+  .service-card:nth-child(4){ grid-column: 2 / span 2; }
+  .service-card:nth-child(5){ grid-column: 4 / span 2; }
+}
+
+/* Tablet */
+@media (max-width: 1024px){
+  .services-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Móvil */
+@media (max-width: 600px){
+  .services-grid{ grid-template-columns: 1fr; }
+}
+
+.service-card{
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(10,26,51,0.10);
+  border-radius: 16px;
+  padding: 22px 18px;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.service-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 16px 28px rgba(0,0,0,0.12);
+}
+.service-card .icon{ font-size: 34px; margin-bottom: 10px; }
+
+.service-card h3{
+  margin: 10px 0 10px;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--wine);
+}
+
+.service-card p{
+  width: 100%;
+  margin: 0 auto;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--navy);
+}
+
+/* =========================================================
+   BLOQUE REMATES (AISLADO, SOLO CLASES .bloque-remates)
+   ========================================================= */
+.bloque-remates{
+  width: min(92%, 980px);
+  margin: 18px auto;
+  display: grid;
+  gap: 18px;
+}
+
+/* Título interno */
+.bloque-remates .titulo{
+  margin: 6px 0 12px;
+  color: var(--blue);
+  font-weight: 900;
+  line-height: 1.12;
+  font-size: clamp(1.35rem, 3.6vw, 2.35rem);
+  padding: 0 10px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Texto interno */
+.bloque-remates .texto{
+  width: 100%;
+  max-width: 900px;
+  margin: 10px auto;
+  font-size: clamp(1rem, 2.1vw, 1.12rem);
+  line-height: 1.65;
+  color: var(--navy);
+}
+
+/* Link interno */
+.bloque-remates .link-dg{
   display: inline-block;
-  margin: 20px 10px;
-  padding: 10px 20px;
-  background-color: #FFD700;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  border: 2px solid #FFD700;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+  margin-top: 8px;
+  color: #e6007e;
+  font-weight: 900;
 }
 
-.btn-yellow:hover {
-  background-color: #000;
-  color: #FFD700;
+/* Imagen hero */
+.bloque-remates .hero{
+  width: 100%;
+  max-width: 520px;   /* controla el tamaño como antes */
+  height: auto;
+  display: block;
+  margin: 12px auto 14px;
+  border-radius: 14px;
+  object-fit: contain; /* evita recortes raros */
 }
 
-/* Botón WhatsApp */
-.contact-btn {
-  display: flex;
+/* Logos GRID */
+.bloque-remates .logos{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+  align-items: center;
+  justify-items: center;
+}
+
+.bloque-remates .logos img{
+  width: 100%;
+  max-width: 120px;
+  height: 62px;
+  object-fit: contain;
+  background: #fff;
+  padding: 10px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* Tablet: 3x2 */
+@media (max-width: 1024px){
+  .bloque-remates .logos{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Móvil: 2x3 */
+@media (max-width: 520px){
+  .bloque-remates > section{ padding: 22px 16px; }
+  .bloque-remates .logos{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .bloque-remates .logos img{ max-width: 105px; height: 54px; padding: 8px; }
+}
+
+/* =========================================================
+   SECCIÓN VIDEO (TU BLOQUE .section.responsive-media)
+   ========================================================= */
+.section.responsive-media h2{
+  margin: 8px 0 12px;
+  font-size: clamp(1.35rem, 4vw, 2.2rem);
+  font-weight: 900;
+  color: var(--blue);
+}
+
+.section.responsive-media video{
+  width: min(92%, 720px);
+  height: auto;
+  border-radius: 14px;
+  display: block;
+  margin: 14px auto 6px;
+  border: 3px solid rgba(255,215,0,0.8);
+}
+
+/* =========================================================
+   QR + texto (aislado)
+   ========================================================= */
+.qr img{
+  width: 150px;
+  margin: 18px auto 10px;
+}
+
+body > p{
+  width: min(92%, 900px);
+  margin: 10px auto 20px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   BOTÓN WHATSAPP (solo clase .contact-btn)
+   ========================================================= */
+.contact-btn{
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: 20px auto;
-  padding: 15px 20px;
+  margin: 8px auto;
+  padding: 14px 18px;
   font-size: 18px;
-  font-weight: bold;
-  color: #FFF;
-  background-color: #25D366;
+  font-weight: 900;
+  color: #fff;
+  background: #25D366;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   text-transform: uppercase;
-  transition: background-color 0.3s, transform 0.2s;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform .2s ease, filter .2s ease;
+  width: min(90%, 420px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+.contact-btn:hover{ transform: scale(1.04); filter: brightness(0.95); }
+
+/* =========================================================
+   BLOG (Aislado: arregla tu .blog-card-wrapper, .blog-text)
+   ========================================================= */
+.blog-section{
+  padding: 40px 16px 20px;
 }
 
-.contact-btn:hover {
-  background-color: #128C7E;
-  transform: scale(1.1);
+.blog-title{
+  margin: 10px 0 26px;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 900;
+  color: var(--blue);
 }
 
-/* Video */
-iframe {
-  width: 80%;
-  max-width: 600px;
-  height: 315px;
-  margin: 20px auto;
-  border: 3px solid #FFD700;
-  border-radius: 10px;
-  display: block;
+.blog-item{
+  width: min(92%, 1100px);
+  margin: 0 auto 34px;
 }
 
-/* QR */
-.qr img {
-  width: 150px;
-  margin: 20px 0;
-}
-.qr + p {
-  max-width: 900px;      /* Evita desbordes */
-  margin: 20px auto;     /* Centrado horizontal */
-  text-align: center;    /* Centra el texto */
-  padding: 0 20px;       /* Espacio para móviles */
-  font-size: 1.3rem;
-  line-height: 1.5;
-}
-
-/* Responsive */
-@media (max-width: 768px) {   /* Tablets */
-  .qr + p {
-    max-width: 95%;
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {   /* Celulares */
-  .qr + p {
-    max-width: 100%;
-    font-size: 1rem;
-  }
-}
-
-/* Lista de servicios */
-.services-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.services-list li {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-/* ----------------------------- */
-/*           RESPONSIVE          */
-/* ----------------------------- */
-
-/* TABLET */
-@media (max-width: 900px) {
-  h2 {
-    font-size: 30px;
-  }
-
-  .social-icons img {
-    width: 55px;
-    height: 55px;
-  }
-
-  iframe {
-    width: 90%;
-    height: 280px;
-  }
-
-  .btn-yellow {
-    padding: 8px 16px;
-    font-size: 15px;
-  }
-
-  p {
-    max-width: 90%;
-    font-size: 17px;
-  }
-}
-
-/* TELÉFONOS */
-@media (max-width: 600px) {
-  h2 {
-    font-size: 26px;
-  }
-
-  .social-icons img {
-    width: 45px;
-    height: 45px;
-  }
-
-  .property img {
-    width: 90%;
-    max-width: 320px;
-  }
-
-  iframe {
-    width: 100%;
-    height: 230px;
-  }
-
-  .location-btn {
-    font-size: 14px;
-    padding: 12px 18px;
-  }
-
-  .contact-btn {
-    font-size: 16px;
-    padding: 12px 18px;
-  }
-
-  .btn-yellow {
-    width: 90%;
-    max-width: 300px;
-    text-align: center;
-    padding: 12px 0;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  .services-list li {
-    font-size: 16px;
-  }
-}
-
-/* Pulse Animation */
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 10px #28a745;
-  }
-  50% {
-    box-shadow: 0 0 20px #28a745;
-  }
-}
-
-/* Fondo general solo para el BLOG */
-.blog-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-/* Título principal */
-.blog-section h2 {
-  font-size: 42px;
-  font-weight: 800;
-  margin-bottom: 50px;
-  
-}
-
-/* TODOS LOS P DEL SITIO */
-p {
-  font-size: 1.4rem !important;
-  line-height: 1.6 !important;
-  color: #0A1A33 !important; /* Azul marino */
-  font-weight: 500;
-}
-
-/* ─────────────────────────────
-   ITEM DEL BLOG
-────────────────────────────── */
-.blog-item {
-  display: flex;
-  justify-content: center;  /* 🔹 Centrado horizontal */
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin: 0 auto 70px auto; /* 🔹 Centrado del bloque */
-  max-width: 1100px;
-}
-
-/* Texto centrado, pero elegante */
-
-.blog-section p {
-  font-size: 1.4rem !important; /* Aumenta el tamaño */
-  line-height: 1.6 !important;  /* Más aire entre líneas */
-  color: #0A1A33 !important;    /* Azul marino */
-  font-weight: 500;             /* Un poco más fuerte */
-}
-
-
-/* ─────────────────────────────
-   IMAGENES
-────────────────────────────── */
-
-.blog-image {
-  flex: 1;
-  min-width: 320px;
-  display: flex;
-  justify-content: center;
-}
-
-.carousel {
-  position: relative;
+/* Wrapper que tú ya usas */
+.blog-card-wrapper{
   width: 100%;
-  max-width: 500px;   /* 🔹 Evita que se haga enorme */
-  height: 350px;
-  overflow: hidden;
-  border-radius: 20px;
- 
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 22px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--card-brd);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 20px;
   align-items: center;
 }
 
-.carousel img {
+.blog-text{
+  text-align: left;
+}
+
+.blog-text h3{
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--wine);
+}
+
+.blog-text p{
+  width: 100%;
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* Carrusel */
+.blog-image{
+  display: flex;
+  justify-content: center;
+}
+
+.carousel{
+  position: relative;
+  width: min(100%, 520px);
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(10,26,51,0.10);
+}
+
+.carousel img{
   position: absolute;
-  max-width: 100%;
-  max-height: 100%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   opacity: 0;
   transition: opacity 1s ease;
 }
+.carousel img.active{ opacity: 1; }
 
-.carousel img.active {
-  opacity: 1;
-}
-
-#pause-btn {
+#pause-btn{
   position: absolute;
   bottom: 10px;
   right: 10px;
   width: 42px;
   height: 42px;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.92);
   border: none;
   border-radius: 50%;
   font-size: 18px;
   cursor: pointer;
 }
 
-
-/* ─────────────────────────────
-   RESPONSIVE
-────────────────────────────── */
-@media (max-width: 768px) {
-
-  .blog-item {
-    flex-direction: column;
+/* Blog responsive */
+@media (max-width: 900px){
+  .blog-card-wrapper{
+    grid-template-columns: 1fr;
     text-align: center;
   }
-
-
-  .carousel {
-    height: 260px;
-  }
+  .blog-text{ text-align: center; }
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-  .header-video {
-    height: 150px;
-  }
-  
-  .footer-video {
-    height: 200px;
-  }
-  
-  .footer-enlaces {
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .footer-texto h1 {
-    font-size: 1.5rem;
-  }
-  
-  .footer-enlaces h2, .footer-enlaces h3 {
-    font-size: 1.2rem;
-  }
-  
-  .blog-item {
-    flex-direction: column;
-  }
-
-  iframe {
-    width: 90%;
-  }
+/* =========================================================
+   FLIP CARDS (Aislado)
+   ========================================================= */
+.cards-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  padding: 10px 10px 30px;
 }
 
-@media (max-width: 480px) {
-  .header-video {
-    height: 120px;
-  }
-  
-}
-.footer-content {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    max-height: 300px; /* 🔹 Ajusta este valor según lo pequeño que quieras */
-}
-
-
-.footer-content video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.texto-video {
-    position: absolute;
-    top: 20px;             /* Casi arriba */
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 3;
-    color: white;
-}
-
-.texto-video h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    text-shadow: 0 0 8px rgba(0,0,0,0.7);
-}
-.texto-video div {
-    display: flex;
-    justify-content: space-between; 
-    width: 100%; /* Antes era 70-90% */
-    max-width: 100%; /* Para que ocupe todo el espacio del video */
-    margin: 0 auto;
-    padding: 0 40px; /* Empuja un poco hacia los bordes */
-}
-
-.texto-video a h2 {
-    color: #FF1493; /* Vino */
-    font-size: 2rem;
-    text-shadow: 1px 1px 4px rgba(255,255,255,0.7);
-}
-
-.texto-video a h3 {
-    color: #FF1493; /* Rosa fuerte */
-    font-size: 2rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-}
-.texto-video div {
-    display: flex;
-    justify-content: center; /* centra el grupo */
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-}
-
-.texto-video a:first-child {
-    position: relative;
-    left: -280px; /* mueve CDMX más a la izquierda */
-}
-
-.texto-video a:last-child {
-    position: relative;
-    right: -280px; /* mueve Jalisco más a la derecha */
-}
-
-
-/* ----------- FLIP CARD ----------- */
-.flip-card {
-  width: 100%;
-  max-width: 400px;
+.flip-card{
+  width: min(92%, 360px);
   height: 420px;
   perspective: 1000px;
 }
 
-.flip-inner {
+.flip-inner{
   width: 100%;
   height: 100%;
   position: relative;
@@ -592,574 +494,244 @@ p {
   transition: transform 0.8s;
 }
 
-.flip-card:hover .flip-inner {
-  transform: rotateY(180deg);
-}
+.flip-card:hover .flip-inner{ transform: rotateY(180deg); }
 
-.flip-front, .flip-back {
+.flip-front, .flip-back{
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
   position: absolute;
   border-radius: 18px;
   overflow: hidden;
+  background: #fff;
 }
 
-/* Parte frontal */
-/* Ajuste para que el h2 aparezca */
-.flip-front img {
+.flip-front img{
   width: 100%;
-  height: 70%; /* <-- ANTES 80%, ahora 70% para que quepa el h2 */
+  height: 70%;
   object-fit: cover;
 }
 
-.flip-front h2 {
-  text-align: center;
-  background: #ffffff;
-  color: #7a004d;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: 700;
-  border-top: 2px solid #b3007a;
+.flip-front h3{
   margin: 0;
-}
-
-.flip-front h3 {
-  text-align: center;
-  background: #ffffff;  /* fondo blanco limpio */
-  color: #7a004d;       /* vino oscuro elegante */
-  padding: 12px;
-  font-size: 20px;
+  padding: 12px 10px;
+  font-size: 18px;
   font-weight: 900;
-  border-bottom: 3px solid #b3007a; /* línea inferior vino (opcional pero muy estética) */
+  background: #fff;
+  color: var(--wine);
+  border-bottom: 3px solid #b3007a;
 }
 
-/* Parte trasera */
-.flip-back {
+.flip-front h2{
+  margin: 0;
+  padding: 10px 10px;
+  font-size: 16px;
+  font-weight: 900;
   background: #fff;
+  color: var(--wine);
+  border-top: 2px solid #b3007a;
+}
+
+.flip-back{
   transform: rotateY(180deg);
-  overflow: hidden;
   padding: 0;
 }
 
-/* Ajuste de imagen trasera (si usas una sola imagen) */
-.flip-back .back-img {
-  width: 100%;
-  height: 50%;
-  object-fit: contain; /* <-- evita cortes */
-  border-radius: 10px;
-}
-
-/* ---------- SLIDER ---------- */
-.slider {
+.slider{
   width: 100%;
   height: 100%;
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  align-items: center;         /* Centra las imágenes verticalmente */
 }
 
-.slide {
+.slide{
   min-width: 100%;
   height: 100%;
   scroll-snap-align: center;
-
-  display: flex;               /* Centra la imagen */
-  justify-content: center;
-  align-items: center;
-  background: #fff;            /* fondo para que no se vea vacío */
+  display: grid;
+  place-items: center;
+  background: #fff;
 }
-
-.slide img {
+.slide img{
   width: 100%;
   height: 100%;
-  object-fit: contain;         /* <-- LA CLAVE: NO CORTA NUNCA */
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-  .flip-card {
-    height: 360px; /* más cómodo en tablet */
-  }
-}
-
-@media (max-width: 480px) {
-  .flip-card {
-    height: 320px; /* mejor en celulares */
-  }
-}
-/* Tablets */
-@media (max-width: 768px) {
-  .flip-front h2 {
-    bottom: 8px;
-    font-size: 14px;
-    padding: 5px 10px;
-  }
-}
-
-/* Celulares */
-@media (max-width: 480px) {
-  .flip-front h2 {
-    bottom: 6px;
-    font-size: 13px;
-    padding: 4px 8px;
-  }
-}
-
-/* ----------- PARTNERS ----------- */
-
-.partners-section {
-  text-align: center;
-  margin: 40px 0;
-}
-
-.partners-section h2 {
-  font-size: 32px;
-  color: #202122;
-  margin-bottom: 20px;
-}
-
-.partners-section p {
-  font-size: 20px;
-  max-width: 700px;
-  margin: 0 auto 30px auto;
-  color: #202122;
-  font-weight: 600;
-}
-
-/* CONTENEDOR DE LOGOS EN UNA LÍNEA */
-.partners-logos {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  gap: 15px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
-
-.partners-logos img {
-  width: 110px;
-  height: 60px;
   object-fit: contain;
-  background: white;
-  padding: 5px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.partners-logos img:hover {
-  transform: scale(1.05);
-}
-
-/* ----------------------------- */
-/*          RESPONSIVE           */
-/* ----------------------------- */
-/* Tablets */
-@media (max-width: 900px) {
-    .flip-card {
-        width: 300px;
-        height: auto; /* altura automática */
-    }
-    .flip-front h2, .flip-front h3 {
-        font-size: clamp(16px, 4vw, 20px); /* tamaño adaptable */
-        padding: 5px 8px;
-        margin: 5px 0;
-        display: block; /* asegurar que se muestre */
-        word-wrap: break-word;
-    }
-    .partners-section h2 {
-        font-size: 28px;
-    }
-    .partners-section p {
-        font-size: 18px;
-    }
-    .partners-logos img {
-        width: 90px;
-        height: 50px;
-    }
-}
-
-/* Teléfonos */
-@media (max-width: 600px) {
-    .flip-card {
-        width: 90%;
-        height: auto;
-        margin: 0 auto;
-    }
-    .flip-front h2, .flip-front h3 {
-        font-size: clamp(14px, 5vw, 16px); /* tamaño adaptable */
-        padding: 4px 6px;
-        margin: 4px 0;
-        display: block;
-        word-wrap: break-word;
-    }
-    .partners-section h2 {
-        font-size: 24px;
-    }
-    .partners-section p {
-        font-size: 16px;
-        max-width: 90%;
-    }
-    .partners-logos {
-        gap: 10px;
-    }
-    .partners-logos img {
-        width: 70px;
-        height: 40px;
-        padding: 4px;
-    }
 }
 
 
-/* Tabletas: pantallas medianas */
-@media (max-width: 1024px) {
-  .header-video {
-    height: 150px;
+/* =========================================
+   BACK + SLIDER RESPONSIVE (MÓVIL/TABLET)
+   SOLO para las flip-cards
+   ========================================= */
+@media (max-width: 768px){
+
+  /* La parte de atrás debe ocupar SIEMPRE todo el alto */
+  .flip-card .flip-back{
+    overflow: hidden;       /* evita que se “desborde” raro */
   }
 
-  .footer-video {
-    height: 200px;
+  /* El slider debe ser scrolleable en móvil (drag) */
+  .flip-card .slider{
+    height: 100%;
+    overflow-x: scroll;                 /* <- clave (no auto) */
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;  /* iPhone */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    display: flex;
   }
 
-  .texto-video h1 {
-    font-size: 2rem;
+  /* Cada “pantalla” del slider */
+  .flip-card .slide{
+    flex: 0 0 100%;
+    min-width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    display: flex;          /* mejor que grid para evitar cortes raros */
+    align-items: stretch;
+    justify-content: stretch;
   }
 
-  .texto-video a h2,
-  .texto-video a h3 {
-    font-size: 1.5rem;
-  }
-
-  .flip-card {
-    width: 300px;
-    height: 350px;
-  }
-
-  .partners-logos img {
-    width: 90px;
-    height: 50px;
-  }
-
-  iframe {
-    width: 90%;
-  }
-}
-
-/* Móviles: pantallas pequeñas */
-@media (max-width: 768px) {
-  .header-video {
-    height: 120px;
-  }
-
-  .footer-video {
-    height: 180px;
-  }
-
-  .texto-video h1 {
-    font-size: 1.6rem;
-  }
-
-  .texto-video a h2,
-  .texto-video a h3 {
-    font-size: 1.2rem;
-  }
-
-  .flip-card {
-    width: 250px;
-    height: 300px;
-  }
-
-  .partners-logos img {
-    width: 70px;
-    height: 40px;
-  }
-
-  iframe {
+  .flip-card .slide img{
     width: 100%;
+    height: 100%;
+    object-fit: contain;    /* se ve completa sin recortar */
+    display: block;
   }
 }
 
-/* Móviles muy pequeños */
-@media (max-width: 480px) {
-  .header-video {
-    height: 100px;
+@media (max-width: 480px){
+  .flip-card .slider{ height: 100%; }
+  .flip-card .slide{ height: 100%; }
+}
+
+
+
+/* SOLO móvil/tablet: arregla el espacio del "gira" en la tarjeta pool */
+@media (max-width: 768px){
+  .flip-pool .flip-front{
+    display: flex;
+    flex-direction: column;
   }
 
-  .footer-video {
-    height: 150px;
+  /* La imagen se come el espacio sobrante */
+  .flip-pool .flip-front img{
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    object-fit: cover;
   }
 
-  .texto-video h1 {
-    font-size: 1.4rem;
+  .flip-pool .flip-front h3{
+    margin: 0;
+    font-size: 16px;
+    padding: 10px 10px;
   }
 
-  .texto-video a h2,
-  .texto-video a h3 {
-    font-size: 1rem;
-  }
-
-  .flip-card {
-    width: 200px;
-    height: 250px;
-  }
-
-  .partners-logos img {
-    width: 60px;
-    height: 35px;
+  /* QUITA el auto y pega "gira" al título */
+  .flip-pool .flip-front h2{
+    margin: 0;
+    font-size: 14px;
+    padding: 6px 10px 10px;
+    border-top: 2px solid #b3007a;
   }
 }
-/* ----- FIX RESPONSIVE GLOBAL ----- */
 
-/* VIDEO DE TEXTO: acomodo natural */
-.texto-video div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
+@media (max-width: 480px){
+  .flip-pool .flip-front h3{ font-size: 15px; }
+  .flip-pool .flip-front h2{ font-size: 13px; padding: 6px 10px 9px; }
+}
+/* ===== TEXTO "DESLIZA" SOLO DESDE CSS (RESPONSIVE) ===== */
+@media (max-width: 768px){
+
+  .flip-card .flip-back{
+    position: relative;
+  }
+
+  .flip-card .flip-back::after{
+    content: "DESLIZA";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: var(--wine);
+    opacity: 0.7;
+
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(6px);
+
+    padding: 6px 14px;
+    border-radius: 999px;
+
+    pointer-events: none; /* no parece botón */
+  }
+}
+
+/* =========================================================
+   FOOTER VIDEO + TEXTO (Aislado)
+   ========================================================= */
+.footer-content{
+  position: relative;
   width: 100%;
-  padding: 0 20px;
-  position: static !important;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  max-height: 300px;
 }
-
-/* Quitamos posiciones forzadas que hacían desastre */
-.texto-video a:first-child,
-.texto-video a:last-child {
-  position: static !important;
-  left: 0 !important;
-  right: 0 !important;
-  transform: none !important;
-}
-
-/* Carruseles se adaptan sin recorte */
-.carousel {
-  width: 100%;
-  max-width: 450px;
-  height: auto;
-  aspect-ratio: 4/3;
-  margin: 0 auto;
-}
-
-/* Imagenes del carrusel responsivas */
-.carousel img {
-  position: absolute;
+.footer-content video{
   width: 100%;
   height: 100%;
-  object-fit: contain !important;
+  object-fit: cover;
 }
 
-/* Flip Cards: se acomodan solas */
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-
-.flip-card {
-  max-width: 320px;
-  width: 100%;
-}
-
-/* ---------- MEDIA QUERIES CORREGIDOS ---------- */
-
-@media (max-width: 768px) {
-  /* Texto del video en columna (antes se montaba) */
-  .texto-video div {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  /* Carrusel más pequeño */
-  .carousel {
-    max-width: 100%;
-    aspect-ratio: 4/3;
-  }
-
-  /* Flip cards */
-  .flip-card {
-    max-width: 260px;
-  }
-
-  /* Blog items en columna */
-  .blog-item {
-    flex-direction: column !important;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .texto-video h1 {
-    font-size: 1.2rem;
-  }
-
-  .texto-video a h2,
-  .texto-video a h3 {
-    font-size: 1rem;
-  }
-
-  .carousel {
-    aspect-ratio: 1/1;
-  }
-
-  .flip-card {
-    max-width: 220px;
-  }
-
-  .blog-item {
-    flex-direction: column;
-  }
-}
-
-
-/* VIDEO RESPONSIVE */
-.responsive-media video {
-  width: 100%;
-  height: auto;
-  max-width: 700px;  /* límite en pantallas grandes */
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-  border: 3px solid #FFD700;
-}
-
-/* Mantener proporción en pantallas pequeñas */
-.responsive-media {
-  text-align: center;
-  padding: 10px;
-}
-
-/* Contenedor principal */
-.texto-video {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* FILA de oficinas */
-.oficinas-row {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;   /* una a la izq y otra a la der */
-    align-items: center;
-    padding: 0 20px;
-    gap: 20px;
-}
-
-/* Enlaces */
-.oficinas-row a {
-    text-decoration: none;
-    color: inherit;
-    flex: 1;                /* para que ambas ocupen el mismo espacio */
-}
-
-/* Títulos */
-.oficinas-row h2,
-.oficinas-row h3 {
-    white-space: nowrap;    /* evita que se partan en 2 líneas */
-    font-size: 1.3rem;
-    margin: 0;
-    text-align: center;
-}
-
-/* ---- TABLETS ---- */
-@media (max-width: 900px) {
-    .oficinas-row h2,
-    .oficinas-row h3 {
-        font-size: 1.1rem;
-    }
-}
-
-/* ---- CELULARES ---- */
-@media (max-width: 600px) {
-    .oficinas-row {
-        flex-direction: column;   /* una arriba y otra abajo */
-        gap: 10px;
-    }
-
-    .oficinas-row h2,
-    .oficinas-row h3 {
-        font-size: 1rem;
-    }
-}
-
-/* ===================== */
-/*   ESTILOS DE COLORES EN TODO EL CUERPO   */
-/* ===================== */
-
-/* 1) Fondo beige limpio */
-body {
-  background: #F7EDE6 !important;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  color: #0A1A33;
-  text-align: center;
-}
-
-/* 2) H1 — Degradado verde–azul */
-h1 {
-  font-size: 3.8rem;
-  font-weight: 800;
-  background: #ff007f; /* 🌸 Rosa fuerte */
-  -webkit-background-clip: text;
-  color: transparent;
-  line-height: 1.1;
-  margin-bottom: 20px;
-}
-.blog-text h1 {
-  font-size: 3.2rem;
-  font-weight: 800;
-  background: #ff007f; /* Rosa fuerte */
-  -webkit-background-clip: text;
-  color: transparent;
-  line-height: 1.1;
-  margin-bottom: 20px;
-}
-.blog-title {
-  color: #ff3ca6; /* rosa */
-}
-
-/* 3) H2 — Azul fuerte */
-h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #0074E8;
-  margin: 20px 0 10px;
-}
-
-/* 4) H3 — Azul marino */
-h3 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #0A1A33;
-  margin: 15px 0 5px;
-}
-
-/* 5) Párrafos — Negro */
-
-.blog-text h3 {
-  color: #007BFF !important;
-  font-weight: 700;
-}
-
-/* 6) Botones — Mismo degradado del H1 */
-.btn-seguro,
-button {
-  background: linear-gradient(90deg, #7ED957, #0A66C2);
+.texto-video{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: start center;
+  padding-top: 18px;
   color: white;
-  border: none;
-  padding: 14px 35px;
-  border-radius: 12px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: .3s;
+  z-index: 3;
+  text-align: center;
 }
 
-.btn-seguro:hover,
-button:hover {
-  transform: scale(1.05);
+.texto-video h1{
+  margin: 0 0 10px;
+  font-size: clamp(1.2rem, 4vw, 2.4rem);
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+.oficinas-row{
+  width: min(92%, 900px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 0 12px;
+}
+.oficinas-row a{ flex: 1; }
+
+.oficinas-row h2,
+.oficinas-row h3{
+  margin: 0;
+  font-size: clamp(1rem, 2.8vw, 1.35rem);
+  font-weight: 900;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  color: #FF1493;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+@media (max-width: 600px){
+  .oficinas-row{ flex-direction: column; gap: 8px; }
 }
