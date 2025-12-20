@@ -225,6 +225,113 @@ a{ color:inherit; text-decoration:none; }
   line-height: 1.6;
   color: var(--navy);
 }
+/* =========================================================
+   BLOQUE FOLDER CARPETAS POR ESTADO
+   ========================================================= */
+.titulo{
+  text-align:center;
+  font-size:26px;              /* más presencia */
+  font-weight:900;
+  margin-bottom:28px;
+  color:#0A3D91;               /* azul elegante (no chillón) */
+  letter-spacing:1.5px;        /* look corporativo */
+  text-transform:uppercase;
+  position:relative;
+}
+
+/* GRID */
+.grid-folders{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:28px;
+  max-width:900px;
+  margin:0 auto;
+}
+
+@media(max-width:700px){
+  .grid-folders{ grid-template-columns:1fr; }
+}
+
+/* FOLDER */
+.folder-css{
+  position:relative;
+  height:240px;
+  border-radius:22px;
+  background:#f7c948;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 16px 30px rgba(0,0,0,.15);
+  transition:.2s ease;
+}
+
+.folder-css:hover{
+  transform:translateY(-4px);
+  box-shadow:0 22px 40px rgba(0,0,0,.2);
+}
+
+/* PESTAÑA SUPERIOR */
+.folder-css::before{
+  content:"";
+  position:absolute;
+  top:-18px;
+  left:28px;
+  width:140px;
+  height:36px;
+  background:#e0a106;
+  border-radius:14px 14px 0 0;
+}
+
+/* HOJAS */
+.folder-css::after{
+  content:"";
+  position:absolute;
+  top:26px;
+  left:40px;
+  width:70%;
+  height:24px;
+  background:#ffffff;
+  border-radius:6px;
+  box-shadow:
+    0 10px 0 #f1f1f1,
+    0 20px 0 #e8e8e8;
+}
+
+/* TEXTO */
+/* TEXTO (ETIQUETA BLANCA) */
+.folder-css span{
+  position:absolute;
+  z-index:2;
+
+  /* 🔹 centrado real */
+  top:55%;
+  left:50%;
+  transform:translate(-50%, -50%);
+
+  /* 🔹 texto */
+  font-size:20px;        /* antes 26px */
+  font-weight:800;       /* menos pesado */
+  text-transform:uppercase;
+  text-align:center;
+  color:#0A1A33;
+  line-height:1.2;
+
+  /* 🔹 caja */
+  background:rgba(255,255,255,.92);
+  padding:12px 22px;
+  border-radius:14px;
+  max-width:80%;
+}
+@media(max-width:700px){
+  .folder-css span{
+    font-size:18px;
+    padding:10px 18px;
+  }
+}
+
+
+
 
 /* =========================================================
    BLOQUE REMATES (AISLADO, SOLO CLASES .bloque-remates)
