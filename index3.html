@@ -4,12 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#061f35">
-  <link id="dynamicFavicon" rel="icon" type="image/png" href="dgsinfondo.png">
-  <link rel="apple-touch-icon" href="dgsinfondo.png">
-  <link rel="preload" as="image" href="dgsinfondo.png">
-  <link rel="preload" as="image" href="hero-casa-dg.png">
   <meta name="description" content="DG Consultoría en Recuperación Bancaria. Remates bancarios, activos inmobiliarios, flipping, pool inmobiliario y oportunidades de inversión.">
-  <title>DG Consultoría | Remates e Inversión Inmobiliaria</title>
+  <title>DG Consultoría en Recuperación Bancaria</title>
   <style>
     @property --ring-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
     :root{
@@ -186,7 +182,7 @@
       100%{transform:translate3d(0,0,0) rotateY(0) rotateZ(0) scale(1);opacity:1;filter:blur(0)}
     }
 
-    /* Una vez abiertas, las tarjetas siguen moviéndose suavemente */
+    /* Una vez abiertas, siguen moviéndose suavemente como las tarjetas Banco / Tiendas / Web del CV */
     #servicios.deck-opened .service-card:nth-child(1){animation:serviceBreath1 7.2s ease-in-out infinite!important}
     #servicios.deck-opened .service-card:nth-child(2){animation:serviceBreath2 7.2s ease-in-out -1.4s infinite!important}
     #servicios.deck-opened .service-card:nth-child(3){animation:serviceBreath3 7.2s ease-in-out -2.8s infinite!important}
@@ -368,7 +364,7 @@
   <div class="hero-grid" aria-hidden="true"></div>
   <nav class="topbar shell">
     <a class="brand" href="#inicio">
-      <img src="dgsinfondo.png" alt="Logo DG" decoding="async" fetchpriority="high">
+      <img src="dgsinfondo.png" alt="Logo DG">
       <span>DG Consultoría<small>RECUPERACIÓN BANCARIA</small></span>
     </a>
     <div class="nav-links">
@@ -391,7 +387,7 @@
 
     <div class="hero-visual reveal">
       <span class="house-glow" aria-hidden="true"></span>
-      <img class="hero-house" src="hero-casa-dg.png" alt="Casa digital en tonos azul petróleo" decoding="async" fetchpriority="high">
+      <img class="hero-house" src="hero-casa-dg.png" alt="Casa digital en tonos azul petróleo">
       <span class="orbit" aria-hidden="true"></span><span class="orbit back" aria-hidden="true"></span>
       <span class="travel" aria-hidden="true"></span><span class="travel t2" aria-hidden="true"></span>
     </div>
@@ -418,7 +414,7 @@
 
       <button class="media-card reveal" id="profileMedia" type="button" aria-label="Reproducir presentación de Dinah Gómez">
         <img src="dinah-foto.png" alt="Dinah Gómez">
-        <video id="profileVideo" playsinline preload="none" poster="dinah-foto.png">
+        <video id="profileVideo" playsinline preload="metadata" poster="dinah-foto.png">
           <source src="dinah-presentacion.mp4" type="video/mp4">
         </video>
         <span class="shade"></span>
@@ -439,8 +435,8 @@
       <div class="services-grid">
         <article class="service-card tilt-card video-card reveal" tabindex="0" role="button" data-modal="modalRemates" aria-label="Abrir video de remates bancarios">
           <div class="service-visual">
-            <video class="service-preview-video lazy-video" muted loop playsinline preload="none" data-autoplay="true" aria-label="Vista previa de propiedades por debajo de su valor comercial">
-              <source data-src="primervideo.mp4" type="video/mp4">
+            <video class="service-preview-video" autoplay muted loop playsinline preload="metadata" aria-label="Vista previa de propiedades por debajo de su valor comercial">
+              <source src="primervideo.mp4" type="video/mp4">
             </video>
             <span class="service-lines"></span><span class="service-symbol">▶</span><span class="video-hint">VER VIDEO ↗</span>
           </div>
@@ -449,8 +445,8 @@
 
         <article class="service-card tilt-card video-card reveal" tabindex="0" role="button" data-modal="modalActivos" aria-label="Abrir video de venta de activos inmobiliarios">
           <div class="service-visual">
-            <video class="service-preview-video lazy-video" muted loop playsinline preload="none" data-autoplay="true" aria-label="Vista previa de venta de activos inmobiliarios">
-              <source data-src="segundovideo.mp4" type="video/mp4">
+            <video class="service-preview-video" autoplay muted loop playsinline preload="metadata" aria-label="Vista previa de venta de activos inmobiliarios">
+              <source src="segundovideo.mp4" type="video/mp4">
             </video>
             <span class="service-lines"></span><span class="service-symbol">▶</span><span class="video-hint">VER VIDEO ↗</span>
           </div>
@@ -458,17 +454,17 @@
         </article>
 
         <article class="service-card tilt-card reveal">
-          <div class="service-visual"><img src="servicio-flipping.jpg" alt="Antes y después de un proyecto de flipping inmobiliario" loading="lazy" decoding="async"><span class="service-lines"></span><span class="service-symbol">↻</span></div>
+          <div class="service-visual"><img src="servicio-flipping.jpg" alt="Antes y después de un proyecto de flipping inmobiliario"><span class="service-lines"></span><span class="service-symbol">↻</span></div>
           <div class="service-body"><span class="service-type">FLIPPING</span><h3>Flipping inmobiliario</h3><p>Adquisición, recuperación, remodelación y salida comercial de inmuebles para crear valor en la propiedad.</p><span class="service-tag">ESTRATEGIA DE REVENTA</span></div>
         </article>
 
         <article class="service-card tilt-card reveal">
-          <div class="service-visual"><img src="servicio-pool.jpg" alt="Inversión colectiva en un proyecto inmobiliario" loading="lazy" decoding="async"><span class="service-lines"></span><span class="service-symbol">◈</span></div>
+          <div class="service-visual"><img src="servicio-pool.jpg" alt="Inversión colectiva en un proyecto inmobiliario"><span class="service-lines"></span><span class="service-symbol">◈</span></div>
           <div class="service-body"><span class="service-type">POOL INMOBILIARIO</span><h3>Inversión colectiva</h3><p>Participación en portafolios inmobiliarios estructurados para diversificar capital y acceder a proyectos de mayor escala.</p><span class="service-tag">PORTAFOLIOS DE INVERSIÓN</span></div>
         </article>
 
         <article class="service-card tilt-card reveal">
-          <div class="service-visual"><img src="servicio-rendimiento.jpg" alt="Asesoría y seguimiento de una inversión inmobiliaria" loading="lazy" decoding="async"><span class="service-lines"></span><span class="service-symbol">↗</span></div>
+          <div class="service-visual"><img src="servicio-rendimiento.jpg" alt="Asesoría y seguimiento de una inversión inmobiliaria"><span class="service-lines"></span><span class="service-symbol">↗</span></div>
           <div class="service-body"><span class="service-type">RENDIMIENTO ANUAL</span><h3>Seguimiento de inversión</h3><p>Proyección, seguimiento y comunicación clara de objetivos, avances y resultados de cada estrategia inmobiliaria.</p><span class="service-tag">VISIÓN FINANCIERA</span></div>
         </article>
       </div>
@@ -506,26 +502,26 @@
       <p class="section-copy reveal">Trabajo con bancos relevantes del sector financiero, recuperadoras autorizadas y despachos jurídicos especializados que participan en el proceso completo.</p>
       <div class="marquee reveal" aria-label="Bancos, recuperadoras y aliados">
         <div class="track">
-          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (25).jpg" alt="BBVA" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (24).jpg" alt="HSBC" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (23).jpg" alt="Banorte" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (26).jpg" alt="Pendulum" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (22).jpg" alt="Zendere" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (27).jpg" alt="Golden Republic" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="logolideres.jpg" alt="Líderes Especialistas en Remates Bancarios" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="logofjch.png" alt="Aliado jurídico" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="logodafne.png" alt="Aliado inmobiliario" loading="lazy" decoding="async"></div>
+          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (25).jpg" alt="BBVA"></div>
+          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (24).jpg" alt="HSBC"></div>
+          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (23).jpg" alt="Banorte"></div>
+          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (26).jpg" alt="Pendulum"></div>
+          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (22).jpg" alt="Zendere"></div>
+          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (27).jpg" alt="Golden Republic"></div>
+          <div class="logo-card"><img src="logolideres.jpg" alt="Líderes Especialistas en Remates Bancarios"></div>
+          <div class="logo-card"><img src="logofjch.png" alt="Aliado jurídico"></div>
+          <div class="logo-card"><img src="logodafne.png" alt="Aliado inmobiliario"></div>
 
 
-          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (25).jpg" alt="BBVA" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (24).jpg" alt="HSBC" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (23).jpg" alt="Banorte" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (26).jpg" alt="Pendulum" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (22).jpg" alt="Zendere" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (27).jpg" alt="Golden Republic" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="logolideres.jpg" alt="Líderes Especialistas en Remates Bancarios" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="logofjch.png" alt="Aliado jurídico" loading="lazy" decoding="async"></div>
-          <div class="logo-card"><img src="logodafne.png" alt="Aliado inmobiliario" loading="lazy" decoding="async"></div>
+          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (25).jpg" alt="BBVA"></div>
+          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (24).jpg" alt="HSBC"></div>
+          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (23).jpg" alt="Banorte"></div>
+          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (26).jpg" alt="Pendulum"></div>
+          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (22).jpg" alt="Zendere"></div>
+          <div class="logo-card"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (27).jpg" alt="Golden Republic"></div>
+          <div class="logo-card"><img src="logolideres.jpg" alt="Líderes Especialistas en Remates Bancarios"></div>
+          <div class="logo-card"><img src="logofjch.png" alt="Aliado jurídico"></div>
+          <div class="logo-card"><img src="logodafne.png" alt="Aliado inmobiliario"></div>
 
         </div>
       </div>
@@ -538,21 +534,21 @@
       <div class="case-grid">
         <article class="case-card reveal">
           <div class="case-media carousel" data-interval="3400">
-            <img class="active" src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (9).jpg" alt="Experiencia de cliente 1" loading="lazy" decoding="async">
-            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (29).jpg" alt="Experiencia de cliente 2" loading="lazy" decoding="async">
-            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (30).jpg" alt="Experiencia de cliente 3" loading="lazy" decoding="async">
-            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (31).jpg" alt="Experiencia de cliente 4" loading="lazy" decoding="async">
-            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (10).jpg" alt="Experiencia de cliente 5" loading="lazy" decoding="async">
+            <img class="active" src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (9).jpg" alt="Experiencia de cliente 1">
+            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (29).jpg" alt="Experiencia de cliente 2">
+            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (30).jpg" alt="Experiencia de cliente 3">
+            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (31).jpg" alt="Experiencia de cliente 4">
+            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (10).jpg" alt="Experiencia de cliente 5">
           </div>
           <div class="case-body"><span>CLIENTES</span><h3>Experiencias de clientes</h3><p>Historias de personas que encontraron una oportunidad para invertir o adquirir patrimonio con acompañamiento durante el proceso.</p></div>
         </article>
         <article class="case-card reveal">
           <div class="case-media carousel" data-interval="3900">
-            <img class="active" src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (1).jpg" alt="Firma en juzgado 1" loading="lazy" decoding="async">
-            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (2).jpg" alt="Firma en juzgado 2" loading="lazy" decoding="async">
-            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (3).jpg" alt="Firma en juzgado 3" loading="lazy" decoding="async">
-            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (4).jpg" alt="Firma en juzgado 4" loading="lazy" decoding="async">
-            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (5).jpg" alt="Firma en juzgado 5" loading="lazy" decoding="async">
+            <img class="active" src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (1).jpg" alt="Firma en juzgado 1">
+            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (2).jpg" alt="Firma en juzgado 2">
+            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (3).jpg" alt="Firma en juzgado 3">
+            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (4).jpg" alt="Firma en juzgado 4">
+            <img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (5).jpg" alt="Firma en juzgado 5">
           </div>
           <div class="case-body"><span>PROCESO</span><h3>Firma en juzgados</h3><p>Seguimiento durante momentos clave del proceso, con coordinación y acompañamiento profesional en cada etapa.</p></div>
         </article>
@@ -566,14 +562,14 @@
       <div class="invest-grid">
         <article class="flip-card reveal" tabindex="0" aria-label="Flipping inmobiliario, tocar para voltear">
           <div class="flip-inner">
-            <div class="face front"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (16).jpg" alt="Flipping inmobiliario" loading="lazy" decoding="async"><div class="flip-copy"><h3>Flipping inmobiliario</h3><p>Compra, recuperación y estrategia de salida para crear valor en un activo inmobiliario.</p><span class="more">TOCA PARA VER MÁS ↗</span></div></div>
-            <div class="face back"><div class="back-slider"><img class="active" src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (21).jpg" alt="Información de flipping 1" loading="lazy" decoding="async"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (20).jpg" alt="Información de flipping 2" loading="lazy" decoding="async"></div><div class="back-note"><b>Flipping inmobiliario</b><span>Toca para volver</span></div></div>
+            <div class="face front"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (16).jpg" alt="Flipping inmobiliario"><div class="flip-copy"><h3>Flipping inmobiliario</h3><p>Compra, recuperación y estrategia de salida para crear valor en un activo inmobiliario.</p><span class="more">TOCA PARA VER MÁS ↗</span></div></div>
+            <div class="face back"><div class="back-slider"><img class="active" src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (21).jpg" alt="Información de flipping 1"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (20).jpg" alt="Información de flipping 2"></div><div class="back-note"><b>Flipping inmobiliario</b><span>Toca para volver</span></div></div>
           </div>
         </article>
         <article class="flip-card reveal" tabindex="0" aria-label="Pool inmobiliario, tocar para voltear">
           <div class="flip-inner">
-            <div class="face front"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (18).jpg" alt="Pool inmobiliario" loading="lazy" decoding="async"><div class="flip-copy"><h3>Pool inmobiliario / rendimiento anual</h3><p>Participación colectiva en portafolios inmobiliarios con enfoque de inversión.</p><span class="more">TOCA PARA VER MÁS ↗</span></div></div>
-            <div class="face back"><div class="back-slider"><img class="active" src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (33).jpg" alt="Información de pool 1" loading="lazy" decoding="async"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (34).jpg" alt="Información de pool 2" loading="lazy" decoding="async"></div><div class="back-note"><b>Pool inmobiliario</b><span>Toca para volver</span></div></div>
+            <div class="face front"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (18).jpg" alt="Pool inmobiliario"><div class="flip-copy"><h3>Pool inmobiliario / rendimiento anual</h3><p>Participación colectiva en portafolios inmobiliarios con enfoque de inversión.</p><span class="more">TOCA PARA VER MÁS ↗</span></div></div>
+            <div class="face back"><div class="back-slider"><img class="active" src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (33).jpg" alt="Información de pool 1"><img src="Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (34).jpg" alt="Información de pool 2"></div><div class="back-note"><b>Pool inmobiliario</b><span>Toca para volver</span></div></div>
           </div>
         </article>
       </div>
@@ -597,7 +593,7 @@
         <button class="service-modal-close" type="button" aria-label="Cerrar">×</button>
       </div>
       <div class="service-modal-video-wrap">
-        <video class="service-modal-video" controls playsinline preload="none">
+        <video class="service-modal-video" controls playsinline preload="metadata">
           <source src="primervideo.mp4" type="video/mp4">
           Tu navegador no soporta video HTML5.
         </video>
@@ -613,7 +609,7 @@
         <button class="service-modal-close" type="button" aria-label="Cerrar">×</button>
       </div>
       <div class="service-modal-video-wrap">
-        <video class="service-modal-video" controls playsinline preload="none">
+        <video class="service-modal-video" controls playsinline preload="metadata">
           <source src="segundovideo.mp4" type="video/mp4">
           Tu navegador no soporta video HTML5.
         </video>
@@ -643,124 +639,6 @@
     logos:['Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (25).jpg','Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (24).jpg','Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (23).jpg','Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (26).jpg','Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (22).jpg','Financial Advisor Logo in Dark Light Blue White Clean Minimalist Style  (27).jpg','logolideres.jpg','logofjch.png','logodafne.png']
   };
 
-
-  // Favicon DG: gira de forma periódica durante toda la navegación.
-  // También recorta automáticamente el espacio transparente del PNG
-  // para que el logo ocupe casi todo el icono de la pestaña.
-  (function initDGfavicon(){
-    const favicon=document.getElementById('dynamicFavicon');
-    if(!favicon)return;
-
-    const img=new Image();
-    img.decoding='async';
-    img.src='dgsinfondo.png';
-
-    img.onload=()=>{
-      const size=96;
-
-      // Detectar el contenido real del PNG y eliminar márgenes transparentes.
-      const scan=document.createElement('canvas');
-      scan.width=img.naturalWidth || img.width;
-      scan.height=img.naturalHeight || img.height;
-      const sctx=scan.getContext('2d',{willReadFrequently:true});
-      if(!sctx)return;
-      sctx.drawImage(img,0,0);
-
-      let sx=0, sy=0, sw=scan.width, sh=scan.height;
-      try{
-        const pixels=sctx.getImageData(0,0,scan.width,scan.height).data;
-        let minX=scan.width, minY=scan.height, maxX=-1, maxY=-1;
-        for(let y=0;y<scan.height;y++){
-          for(let x=0;x<scan.width;x++){
-            const a=pixels[(y*scan.width+x)*4+3];
-            if(a>18){
-              if(x<minX)minX=x; if(x>maxX)maxX=x;
-              if(y<minY)minY=y; if(y>maxY)maxY=y;
-            }
-          }
-        }
-        if(maxX>=minX && maxY>=minY){
-          sx=minX; sy=minY; sw=maxX-minX+1; sh=maxY-minY+1;
-        }
-      }catch(e){/* si el navegador no permite leer píxeles, usa la imagen completa */}
-
-      const canvas=document.createElement('canvas');
-      canvas.width=size; canvas.height=size;
-      const ctx=canvas.getContext('2d');
-      if(!ctx)return;
-
-      // Escala el contenido recortado al máximo sin deformarlo.
-      const target=size; // usa todo el espacio disponible para que se vea más grande
-      const scale=Math.min(target/sw,target/sh);
-      const dw=sw*scale, dh=sh*scale;
-
-      const paint=(angle)=>{
-        ctx.clearRect(0,0,size,size);
-        ctx.save();
-        ctx.translate(size/2,size/2);
-        ctx.rotate(angle);
-        ctx.drawImage(img,sx,sy,sw,sh,-dw/2,-dh/2,dw,dh);
-        ctx.restore();
-        favicon.href=canvas.toDataURL('image/png');
-      };
-
-      // Una vuelta rápida y visible cada 3 segundos durante toda la navegación.
-      const duration=850;
-      let spinning=false;
-
-      const spinOnce=()=>{
-        if(spinning || document.hidden)return;
-        spinning=true;
-        const start=performance.now();
-        const animate=(now)=>{
-          const t=Math.min((now-start)/duration,1);
-          const eased=t<.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2;
-          paint(eased*Math.PI*2);
-          if(t<1){
-            requestAnimationFrame(animate);
-          }else{
-            paint(0);
-            spinning=false;
-          }
-        };
-        requestAnimationFrame(animate);
-      };
-
-      paint(0);
-      setTimeout(spinOnce,700);
-      setInterval(spinOnce,3000);
-      document.addEventListener('visibilitychange',()=>{
-        if(!document.hidden) setTimeout(spinOnce,250);
-      });
-    };
-  })();
-
-  // Los videos inferiores se descargan únicamente cuando están cerca de verse.
-  (function initLazyVideos(){
-    const videos=[...document.querySelectorAll('video.lazy-video')];
-    if(!videos.length)return;
-    const loadVideo=(video)=>{
-      if(video.dataset.loaded==='1')return;
-      video.querySelectorAll('source[data-src]').forEach(source=>{
-        source.src=source.dataset.src;
-        source.removeAttribute('data-src');
-      });
-      video.dataset.loaded='1';
-      video.load();
-      if(video.dataset.autoplay==='true') video.play().catch(()=>{});
-    };
-    if('IntersectionObserver' in window){
-      const vio=new IntersectionObserver(entries=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){loadVideo(entry.target);vio.unobserve(entry.target)}
-        });
-      },{rootMargin:'450px 0px'});
-      videos.forEach(v=>vio.observe(v));
-    }else{
-      videos.forEach(loadVideo);
-    }
-  })();
-
   // Reveal on scroll
   const reveals=[...document.querySelectorAll('.reveal')];
   if('IntersectionObserver' in window){
@@ -782,7 +660,7 @@
     profileVideo.addEventListener('ended',()=>{profileMedia.classList.remove('is-playing');profileVideo.currentTime=0});
   }
 
-  // Título escrito al entrar en la sección
+  // Título escrito como en el CV
   const typing=document.getElementById('bankTyping');
   if(typing){
     const text=typing.dataset.text||typing.textContent;
@@ -824,7 +702,7 @@
     }else openDeck();
   })();
 
-  // Movimiento de Servicios: apertura 3D y respiración suave de las tarjetas
+  // Movimiento de Servicios: misma apertura 3D y respiración de las tarjetas Banco / Tiendas / Web del CV
   (function initServicesDeck(){
     const section=document.getElementById('servicios');
     if(!section)return;
